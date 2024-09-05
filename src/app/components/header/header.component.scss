@@ -1,0 +1,76 @@
+.header--row{
+    margin: 1rem 2rem 1rem 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    width: 114rem;
+}
+.header-logos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.header-logo-codata{
+    background-image: url(../../../assets/img/logo-codata.png);
+    width: 21rem; height: 12rem; max-width: 20rem;
+    background-size: cover;
+    margin: 1rem;
+}
+.header-logo-prefeitura{
+    background-image: url(../../../assets/img/logo-prefeitura.png);
+    width: 20.4rem; height: 12rem; max-width: 21rem; max-height: 7rem;
+    background-size: cover;
+    margin: 1rem;
+}
+
+.nav{
+    width: 90vh;
+}
+
+.nav-header,a {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4rem;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.ellipse {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    border-bottom-left-radius: 7rem;
+    border-bottom-right-radius: 12rem;
+    border-top-left-radius: 12rem;
+    border-top-right-radius: 7rem;
+}
+
+.ellipse::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    border-radius: 50%;
+    background: linear-gradient(182deg, rgba(185, 185, 185, 0) 0%, rgb(167 165 165 / 50%) 50%, rgb(255 255 255 / 0%) 100%);
+    z-index: -1;
+    opacity: 0; 
+    transition: opacity 0.9s cubic-bezier(0.39, 0.58, 0.57, 1); 
+}
+
+.ellipse:hover::before {
+    opacity: 1; 
+}
