@@ -1,0 +1,562 @@
+.header--row {
+    margin: 1rem 2rem 1rem 2rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    left: 0;
+}
+.header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.header-logo-codata {
+    background-image: url(../../../assets/img/logo-codata.png);
+    width: 21rem;
+    height: 12rem;
+    max-width: 20rem;
+    background-size: cover;
+    margin: 1rem;
+}
+.header-logo-prefeitura {
+    background-image: url(../../../assets/img/logo-prefeitura.png);
+    width: 20.4rem;
+    height: 12rem;
+    max-width: 21rem;
+    max-height: 7rem;
+    background-size: cover;
+    margin: 1rem;
+}
+
+.nav {
+    width: 90vh;
+}
+
+.nav-header,
+a {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 4rem;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.ellipse {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    border-bottom-left-radius: 7rem;
+    border-bottom-right-radius: 12rem;
+    border-top-left-radius: 12rem;
+    border-top-right-radius: 7rem;
+}
+
+.ellipse::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    border-radius: 50%;
+    background: linear-gradient(
+        182deg,
+        rgba(185, 185, 185, 0) 0%,
+        rgb(167 165 165 / 50%) 50%,
+        rgb(255 255 255 / 0%) 100%
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.ellipse:hover::before {
+    opacity: 1;
+}
+
+/* Medias Queries Header and Navigation */
+
+@media only screen and (min-width: 1200px) and (max-width: 2560px) {
+    .header--row {
+        width: 100%;
+        margin: 0;
+    }
+    .hamburger-menu input{
+      opacity: 0;
+    }
+}
+
+/* LapTop G and Laptop*/
+@media only screen and (min-width: 1024px) and (max-width: 1780px) {
+   .header--row {
+        width: 100%;
+        margin: 0;
+    }
+    .nav-header{
+      list-style: none;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      flex-direction: column;
+      margin: 0 1rem 0 1rem;
+      position: absolute;
+      top: 15px;
+      right: 10rem;
+    }
+
+  .txt-ellipse{
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+  .header--row {
+    width: 100%;
+    margin: 0;
+  }
+  .nav{
+    width: 40vh;
+  }
+.menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 35vh;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 3.5rem;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .hamburger-menu input{
+    position: relative;
+    top: 2rem;
+    opacity: 0;
+  }
+
+    .hamburger-menu .bar{
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+  }
+
+    .hamburger-menu .bar:first-child{
+    transform-origin: 0% 0%;
+  }
+
+    .hamburger-menu .bar:nth-last-child(2){
+    transform-origin: 0% 100%;
+  }
+
+    .hamburger-menu input:checked ~ .bar{
+    opacity: 1;
+    transform: rotate(45deg) translate(-31px, -27px);
+    background: #36383F;
+  }
+    .hamburger-menu input:checked ~ .bar:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+    .hamburger-menu input:checked ~ .bar:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    
+  }
+
+  .nav-header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .nav-header.open {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 1.5rem;
+    left: 45rem;
+  }
+
+  .txt-ellipse{
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+}
+
+@media only screen and (min-width: 639px) and (max-width: 768px){
+  .header--row {
+    width: 100%;
+    margin: 0;
+  }
+  .nav{
+    width: 40vh;
+  }
+
+  
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 3.5rem;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .hamburger-menu input{
+    position: relative;
+    top: 2rem;
+    opacity: 0;
+  }
+
+    .hamburger-menu .bar{
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+  }
+
+    .hamburger-menu .bar:first-child{
+    transform-origin: 0% 0%;
+  }
+
+    .hamburger-menu .bar:nth-last-child(2){
+    transform-origin: 0% 100%;
+  }
+
+    .hamburger-menu input:checked ~ .bar{
+    opacity: 1;
+    transform: rotate(45deg) translate(-31px, -27px);
+    background: #36383F;
+  }
+    .hamburger-menu input:checked ~ .bar:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+    .hamburger-menu input:checked ~ .bar:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    
+  }
+
+  .nav-header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .nav-header.open {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    width: 30%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 1.5rem;
+    left: 34rem;
+  }
+
+  .txt-ellipse{
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .menu-container {
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 67vh;
+    bottom: 163px;
+  }
+
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px){
+  .header-logo-codata{
+    width: 10rem;
+    height: 6rem;
+  }
+  .header-logo-prefeitura{
+    width: 0;
+    height: 0;
+  }
+
+  .header--row {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav{
+    width: 40vh;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 3.5rem;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .hamburger-menu input{
+    position: relative;
+    top: 2rem;
+    opacity: 0;
+  }
+
+  .hamburger-menu .bar{
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+  }
+
+  .hamburger-menu .bar:first-child{
+    transform-origin: 0% 0%;
+  }
+
+  .hamburger-menu .bar:nth-last-child(2){
+    transform-origin: 0% 100%;
+  }
+
+  .hamburger-menu input:checked ~ .bar{
+    opacity: 1;
+    transform: rotate(45deg) translate(-31px, -27px);
+    background: #36383F;
+  }
+
+  .hamburger-menu input:checked ~ .bar:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  .hamburger-menu input:checked ~ .bar:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    
+  }
+
+  .nav-header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .nav-header.open {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 12%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 5.5rem;
+    left: 10rem;
+  }
+
+  .txt-ellipse{
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .menu-container {
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 35vh;
+    bottom: 7rem;
+  }
+
+}
+
+@media only screen and (min-width: 310px) and (max-width: 424px){
+.header-logo-codata{
+    width: 10rem;
+    height: 6rem;
+  }
+  .header-logo-prefeitura{
+    width: 0;
+    height: 0;
+  }
+
+  .header--row {
+    width: 100%;
+    margin: 0;
+  }
+  .nav{
+    width: 40vh;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 3.5rem;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .hamburger-menu input{
+    position: relative;
+    top: 2rem;
+    opacity: 0;
+  }
+
+  .hamburger-menu .bar{
+    transform-origin: 5px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+  }
+
+  .hamburger-menu .bar:first-child{
+    transform-origin: 0% 0%;
+  }
+
+  .hamburger-menu .bar:nth-last-child(2){
+    transform-origin: 0% 100%;
+  }
+
+  .hamburger-menu input:checked ~ .bar{
+    opacity: 1;
+    transform: rotate(45deg) translate(-31px, -27px);
+    background: #36383F;
+  }
+
+  .hamburger-menu input:checked ~ .bar:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  .hamburger-menu input:checked ~ .bar:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    
+  }
+
+  .nav-header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .nav-header.open {
+    transform: translateX(0);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 12%;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 6.5rem;
+    left: 8rem;
+  }
+
+  .txt-ellipse{
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .menu-container {
+    position: relative;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 27vh;
+    bottom: 7rem;
+  }
+  }

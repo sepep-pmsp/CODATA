@@ -1,0 +1,29 @@
+<div class="header--row">
+    <div class="header-logos">
+        <div class="header-logo-codata"></div>
+        <div class="navigation">
+            <div class="nav">
+                <div class="menu-container">
+                    <div class="hamburger-menu" >
+                        <input type="checkbox" (click)="toggleMenu()" />
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <ul [ngClass]="{'open': isMenuOpen}" class="nav-header">
+                        <li class="list-header">
+                            <div class="ellipse"><a class="txt-ellipse" href="">home</a></div>
+                        </li>
+                        <li class="list-header">
+                            <div class="ellipse"><a class="txt-ellipse" href="">sobre</a></div>
+                        </li>
+                        <li class="list-header">
+                            <div class="ellipse"><a class="txt-ellipse" href="">contato</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-logo-prefeitura"></div>
+    </div>
+</div>
