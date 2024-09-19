@@ -17,9 +17,9 @@
                 <img [src]="projeto.img" alt="Image" class="card__image">
                 <figcaption class="card__caption">
                   <h2 class="card__title">{{ projeto.nome }}</h2>
-                  <p class="card__snippet">{{ projeto.descricao }}</p>
+                  <p class="card__snippet">{{ projeto.subtitle }}</p>
                   <p class="card__date">{{ projeto.data }}</p>
-                  <a href="" class="card__button">Read more</a>
+                  <a [routerLink]="['/projetos', projeto.id]" class="card__button">Veja mais</a>
                 </figcaption>
               </figure>
             </div>
