@@ -2,17 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ProjectComponent } from './projetos/project/project.component';
-import { ItensProjectsComponent } from './projetos/itens-projects/itens-projects.component';
 import { HomeComponent } from './home/home.component';
+import { EstudosComponent } from './estudo/estudos/estudos.component';
+import { DeshboardsComponent } from './dashboard/deshboards/deshboards.component';
+import { DesignComponent } from './design/design/design.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, ProjectComponent, ItensProjectsComponent, HomeComponent],
+  declarations: [HeaderComponent, ProjectComponent, HomeComponent, EstudosComponent, DeshboardsComponent, DesignComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [HeaderComponent],
 })
