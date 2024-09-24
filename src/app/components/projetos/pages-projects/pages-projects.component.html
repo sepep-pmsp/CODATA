@@ -1,0 +1,60 @@
+<div class="page-project--row">
+    <div class="page-project--content">
+      <div class="page-grid-flex">
+        <div class="project-txt-dcr" *ngIf="projeto">
+          <div class="txth2">
+            <h2 class="txt-h2">Projeto</h2>
+          </div>
+          <div class="txt">
+            <p class="txt-pgrf"
+            [innerHTML]="formatDescription(projeto!.description || '')">{{ projeto.description }}</p>
+            <div class="link-proj-git">
+              <p class="prgf-github">Acesse o Projeto <br> no GitHub
+                <a 
+                [href]="projeto.linkProj" 
+                target="_blank"
+                class="link-github">
+                    <button class="btn-github">
+                        <i class="pi pi-github" style="font-size: 3.5rem;"></i>
+                    </button>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="iframe-link--content" *ngIf="projeto">
+          <div class="proj-link--row">
+            <div class="proj-link">
+              <h2>{{ projeto.nome }}</h2>
+            </div>
+            <div class="btn-link--row">
+              <a *ngIf="projeto?.linkPage" [href]="projeto.linkPage" class="link-content" target="_blank">
+                <button class="btn-link">
+                  <i class="pi pi-arrow-up-right" style="font-size: 3rem; color: white;"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="proj-iframe--row">
+            <div class="proj-iframe" *ngIf="safeIframeUrl; else imgTemplate">
+              <iframe [src]="safeIframeUrl" 
+                      frameborder="1" 
+                      class="iframe-content" 
+                      width="150rem" 
+                      height="200vh"
+                      style="zoom: 50%;">
+              </iframe>
+            </div>
+            <ng-template #imgTemplate>
+              <div class="proj-image">
+                <img *ngIf="projeto?.imgURL" [src]="projeto!.imgURL" 
+                     alt="Imagem do projeto"
+                     class="image-content">
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

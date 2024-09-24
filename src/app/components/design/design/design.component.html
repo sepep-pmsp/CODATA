@@ -1,0 +1,37 @@
+<div class="projects--row">
+    <div class="projects--content">
+        <div class="content-txt">
+          <div class="txt-projects">
+            <button (click)="previousSlide()" [disabled]="currentSlide === 0" class="btn-previus">
+              <span class="arrow">
+                <h2 class="txt-h2">design & ux</h2>
+              </span>
+            </button>
+          </div>
+        </div>
+      
+        <div class="carousel-container">
+          <div class="carousel" [ngStyle]="{'transform': 'translateX(-' + (currentSlide * 100) + '%)'}">
+            <div class="card" *ngFor="let designs of design">
+              <figure class="card__thumb">
+                <img [src]="designs.img" alt="Image" class="card__image">
+                <figcaption class="card__caption">
+                  <h2 class="card__title">{{ designs.nome }}</h2>
+                  <p class="card__snippet">{{ designs.descricao }}</p>
+                  <p class="card__date">{{ designs.data }}</p>
+                  <a href="" class="card__button">Read more</a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      
+        <div class="btn-next">
+          <button (click)="nextSlide()" [disabled]="currentSlide === maxSlide" class="btn-nextpage">
+            <span class="arrow-btn">
+            </span>
+          </button>
+        </div>
+      </div>      
+  </div>
+  

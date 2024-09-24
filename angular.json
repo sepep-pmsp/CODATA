@@ -39,7 +39,7 @@
               },
               "src/assets",
               "src/assets/favicon",
-              "src/assets/img"
+              "src/assets/images"
             ],
             "styles": [
               "src/styles.scss",
