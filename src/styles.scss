@@ -40,19 +40,14 @@ p,a,q,li {
     font-family: "Familjen Grotesk", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
 }
 
-a {
+a, li {
     margin: 0;
     padding: 0;
     color: #000000;
     text-decoration: none;
-}
-
-li {
-    margin: 0;
-    padding: 0;
     list-style-type: none;
 }
 
