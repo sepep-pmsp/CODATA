@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { ProjectComponent } from './projetos/project/project.component';
-import { HomeComponent } from './home/home.component';
-import { EstudosComponent } from './estudo/estudos/estudos.component';
-import { DeshboardsComponent } from './dashboard/deshboards/deshboards.component';
-import { DesignComponent } from './design/design/design.component';
-import { PagesProjectsComponent } from './projetos/pages-projects/pages-projects.component';
+import { HeaderComponent } from './body/header/header.component';
+import { HomeComponent } from './body/home/home.component';
 import { RouterModule } from '@angular/router';
+import { SistemasComponent } from './project/sistemas/sistemas.component';
+import { BdPageComponent } from './project/bd-page/bd-page.component';
+import { ProjectComponent } from './project/projetos/project/project.component';
+import { EstudosComponent } from './project/estudo/estudos/estudos.component';
+import { DeshboardsComponent } from './project/dashboard/deshboards/deshboards.component';
+import { PagesProjectsComponent } from './project/projetos/pages-projects/pages-projects.component';
 
 
 
@@ -20,8 +21,9 @@ import { RouterModule } from '@angular/router';
     HomeComponent, 
     EstudosComponent, 
     DeshboardsComponent, 
-    DesignComponent, 
-    PagesProjectsComponent
+    PagesProjectsComponent, 
+    SistemasComponent, 
+    BdPageComponent
   ],
   imports: [
     CommonModule,
