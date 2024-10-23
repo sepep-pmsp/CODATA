@@ -3,12 +3,30 @@
   width: 100%;
   background-color: white;
   padding: 1rem 0 1rem 0;
-  z-index: 1;
+  z-index: 2;
 }
 .header--row.menu-highlight {
   box-shadow: -1px 20px 20px 20px rgba(0, 0, 0, 0.37);
     border-bottom: 1px solid #878787;
     transition: box-shadow 0.6s ease, border-bottom 0.6s ease;
+}
+
+.closeMenu{
+  background-color: #313131a1;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+  @keyframes myAnim {
+    0% {
+      background-position: 50% 0%;
+    }
+  
+    100% {
+      background-position: 50% 100%;
+    }
+  }
 }
 
 .header-logos{
@@ -29,6 +47,8 @@
   width: 249px;
   height: 4rem;
   z-index: 5;
+  right: 7rem;
+  position: relative;
 }
 .header-logo-prefeitura{
   background-image: url(../../../../assets/logos/logo-prefeitura.svg);
@@ -55,6 +75,7 @@
 
 .toggle {
   position: relative;
+  right: 11rem;
   width: 55px;
   height: 45px;
   cursor: pointer;
