@@ -2,195 +2,93 @@
     <div class="conten">
         <div class="content-txt00">
             <h2 class="txt00">CODATA é a coordenadoria de análise de dados da Prefeitura de São Paulo.</h2>
-            <p class="ptxt00">neque porro quisquam est qui dolorem ipsum quia dolor sit amet neque porro quisquam est qui dolorem ipsum quia dolor sit amet neque porro quisquam est qui dolorem ipsum quia dolor sit ametdolor sit amet neque porro quisquam est qui dolorem ipsum quia dolor sit ame</p>
+            <p class="ptxt00">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus minima consequatur totam dolorem optio alias ab voluptas veniam pariatur nulla suscipit officia deleniti inventore nobis ullam, doloribus distinctio vero iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum obcaecati quisquam voluptatem non quia aperiam dolores esse, earum ipsam! Dignissimos soluta illo fugiat libero temporibus ipsa in voluptas est autem!</p>
         </div>
     </div>
     <div class="box-conten">
         <div class="box-big">
-            <div class="box-conten-big">
+            <div *ngFor="let item of bigContents" class="box-conten-big">
                 <div class="conten-txt-btn">
                     <div class="btn-conten-box">
-                        <button class="button">
-                            notícia
-                          </button>
-                          <button class="button">
-                            projeto
-                          </button>
+                        <button class="button">{{ item.buttonNews }}</button>
+                        <button class="button">{{ item.buttonProjects }}</button>
                     </div>
                     <div>
-                        <h2 class="txt-title">o Observatório de Indicadores da Cidade de São Paulo (ObservaSampa) é uma política pública de Estado de dados</h2>
+                        <h2 class="txt-title">{{ item.title }}</h2>
                     </div>
-                    <div>
-                        <p>2 de janeiro de 2024</p>
-                    </div>
+                    <div><p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p></div>
                 </div>
             </div>
         </div>
         <div class="box-small">
-            <div class="box-conten-small">
-                <div class="btn-conten-box">
-                    <button class="button">
-                        projeto
-                      </button>
-                </div>
-                <div>
-                    <h2 class="txt-title">quisquam est qui dolorem ipsum quia dolor sit amet neque porro</h2>
-                </div>
-                <div>
-                    <p>2 de janeiro de 2024</p>
-                </div>
+            <div *ngFor="let item of smallContents" class="box-conten-small">
+              <div class="btn-conten-box">
+                <button class="button">{{ item.buttonLabel }}</button>
+              </div>
+              <div>
+                <h2 class="txt-title">{{ item.title }}</h2>
+              </div>
+              <div>
+                <p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p>
+              </div>
             </div>
-            <div class="box-conten-small">
-                <div class="btn-conten-box">
-                    <button class="button">
-                        projeto
-                      </button>
-                </div>
-                <div>
-                    <h2 class="txt-title">artigo discorre sobre...</h2>
-                </div>
-                <div>
-                    <p>2 de janeiro de 2024</p>
-                </div>
-            </div>
-            <div class="box-conten-small">
-                <div class="btn-conten-box">
-                    <button class="button">
-                        projeto
-                      </button>
-                </div>
-                <div>
-                    <h2 class="txt-title">desenvolvimento Web .....</h2>
-                </div>
-                <div>
-                    <p>2 de janeiro de 2024</p>
-                </div>
-            </div>
-        </div>
+          </div>
     </div>
     <div *ngIf="openedPopupSlug !== null" class="closePopup" (click)="closePopup()">
     </div>
     <div class="activity-area">
-        
         <div class="txt-activity">
-            <h2 class="title-activity">atividades</h2>
+          <h2 class="title-activity">atividades</h2>
         </div>
         <div class="box-activity00">
-            <div class="box-activity" (click)="openPopup('dados')">
-                <div class="obt-limp-dd">
-                    <div class="svgclass">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M326.89-114.02v-80H142.15q-27.6 0-47.86-20.27-20.27-20.26-20.27-47.86v-515.7q0-27.7 20.27-48.03 20.26-20.34 47.86-20.34H500v68.37H142.15v515.7h675.7V-405.5h68.37v143.35q0 27.6-20.34 47.86-20.33 20.27-48.03 20.27h-184.5v80H326.89ZM680-416.63 492.09-604.78 536-648.7l112.57 112.81v-310.33h62.86v310.33L824-648.7l43.91 43.92L680-416.63Z"/></svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt-limp">
-                            obtenção e limpeza de dados
-                        </p>
-                    </div>
-                </div>
-                <div class="pop-up" 
-                *ngIf="isPopupOpen('dados')">
-                    <div class="txt-PopUp">
-                        <p class="txt-p-popup">
-                            Night fever, night fever
-                            We know how to do it
-                            Gimme that night fever, night fever
-                            We know how to show it
-
-                            In the heat of our love
-                            Don't need no help for us to make it
-                            Gimme just enough to take us to the mornin'
-                            I got fire in my mind
-                            I get higher in my walkin'
-                            And I'm glowin' in the dark
-                            I give you warnin'
-                            - Bee Gees
-                        </p>
-                        <div class="btn-popup">
-                            <button class="button">
-                                saiba mais
-                            </button> 
-                        </div>
-                    </div>
-                </div>
+          <div *ngFor="let atividade of atividades" class="box-activity" (click)="openPopup(atividade.slug)">
+            <div [ngClass]="atividade.class">
+              <div class="svgclass">
+                <svg [attr.viewBox]="atividade.svg.viewBox" [attr.width]="atividade.svg.width" [attr.height]="atividade.svg.height" xmlns="atividade.xmlns" fill="#FFFFFF">
+                  <path [attr.d]="atividade.svg.path"></path>
+                </svg>
+              </div>
+              <div class="material-symbols-txt">
+                <p class="material-txt">{{ atividade.text }}</p>
+              </div>
             </div>
-            <div class="box-activity">
-                <div class="auto-rot">
-                    <div class="svgclass">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="m122.76-234.74-48.74-48.74 298.94-297.69 167 167 231.91-232.4H647.02v-68.36h239.2v239.19h-67.37v-121.09L538.96-316.7l-167-167-249.2 248.96Z"/></svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt">
-                            automação de rotinas
-                        </p>
-                    </div>
+            <div class="pop-up" *ngIf="isPopupOpen(atividade.slug)">
+              <div class="txt-PopUp">
+                <p class="txt-p-popup">{{ atividade.description }}</p>
+                <div class="btn-popup">
+                  <button class="button">saiba mais</button> 
                 </div>
+              </div>
             </div>
-            <div class="box-activity">
-                <div class="analise-dd">
-                    <div class="svgclass">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M189-95q-39.05 0-66.53-27.47Q95-149.95 95-189v-582q0-39.46 27.47-67.23Q149.95-866 189-866h384v95H189v582h582v-384h95v384q0 39.05-27.77 66.53Q810.46-95 771-95H189Zm100-182h60v-275h-60v275Zm161 0h60v-406h-60v406Zm162 0h60v-148h-60v148Zm86.5-326v-95H603v-71h96v-97h71v97h96v71.5h-96v94.5h-71.5ZM480-480Z"/></svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt-dd">
-                            análise de dados
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="box-activity">
-                <div class="desenvol-paper">
-                    <div class="svgclass">
-                        <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M48.7499 8.125H16.2499C14.095 8.125 12.0284 8.98102 10.5046 10.5048C8.9809 12.0285 8.12488 14.0951 8.12488 16.25V48.75C8.12488 50.9049 8.9809 52.9715 10.5046 54.4952C12.0284 56.019 14.095 56.875 16.2499 56.875H48.7499C50.9048 56.875 52.9714 56.019 54.4951 54.4952C56.0189 52.9715 56.8749 50.9049 56.8749 48.75V16.25C56.8749 14.0951 56.0189 12.0285 54.4951 10.5048C52.9714 8.98102 50.9048 8.125 48.7499 8.125ZM16.2499 13.5417H48.7499C49.4682 13.5417 50.157 13.827 50.665 14.3349C51.1729 14.8428 51.4582 15.5317 51.4582 16.25V38.8917L42.7915 31.4979C41.4487 30.393 39.7638 29.7889 38.0249 29.7889C36.2859 29.7889 34.601 30.393 33.2582 31.4979L13.5415 47.9375V16.25C13.5415 15.5317 13.8269 14.8428 14.3348 14.3349C14.8427 13.827 15.5316 13.5417 16.2499 13.5417Z" fill="white"/>
-                            <path d="M21.6666 27.0834C23.9103 27.0834 25.7291 25.2645 25.7291 23.0209C25.7291 20.7772 23.9103 18.9584 21.6666 18.9584C19.423 18.9584 17.6041 20.7772 17.6041 23.0209C17.6041 25.2645 19.423 27.0834 21.6666 27.0834Z" fill="white"/>
-                            </svg>
-                            
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt">
-                            desenvolvimento de painéis gerenciais
-                        </p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="box-activity01">
-            <div class="box-activity">
-                <div class="apoio-sys">
-                    <div class="svgclass">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M598-92v-125H433v-432h-70v130H40v-350h323v125h235v-125h323v350H598v-130h-71v338h71v-130h323v349H598ZM134-774v160-160Zm559 427v161-161Zm0-427v160-160Zm0 160h133v-160H693v160Zm0 428h133v-161H693v161ZM134-614h135v-160H134v160Z"/></svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt">
-                            apoio à contratação de sistemas
-                        </p>
-                    </div>
-                </div>
+      </div>
+    <div class="btn-content">
+        <div class="btn-content00">
+            <button class="btn-contente">sobre nós</button>
+        </div>
+        <div class="btn-content01">
+            <button class="btn-contente"> contato </button>
+        </div>
+    </div>
+    <div class="cont-repositor">
+        <div class="line-cont"></div>
+        <div class="content-people">
+          <div *ngFor="let item of repositoryData" class="{{ item.class }}">
+            <p class="number">{{ item.number }}</p>
+            <p class="txt">{{ item.text }}</p>
+          </div>
+        </div>
+        <div class="line-cont"></div>
+      </div>
+    <div class="content-partners">
+        <div class="partners-area">
+            <div class="partners-area-txt">
+                <h2 class="partners-txt">parceiros</h2>
             </div>
-            <div class="box-activity">
-                <div class="design">
-                    <div class="svgclass">
-                        <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M66.5 18H17.5C14.7152 18 12.0445 19.1062 10.0754 21.0754C8.10625 23.0445 7 25.7152 7 28.5V56.5C7 59.2848 8.10625 61.9555 10.0754 63.9246C12.0445 65.8938 14.7152 67 17.5 67H66.5C69.2848 67 71.9555 65.8938 73.9246 63.9246C75.8938 61.9555 77 59.2848 77 56.5V28.5C77 25.7152 75.8938 23.0445 73.9246 21.0754C71.9555 19.1062 69.2848 18 66.5 18ZM38.5 53H24.5C23.5717 53 22.6815 52.6312 22.0251 51.9749C21.3687 51.3185 21 50.4283 21 49.5C21 48.5717 21.3687 47.6815 22.0251 47.0251C22.6815 46.3687 23.5717 46 24.5 46H38.5C39.4283 46 40.3185 46.3687 40.9749 47.0251C41.6312 47.6815 42 48.5717 42 49.5C42 50.4283 41.6312 51.3185 40.9749 51.9749C40.3185 52.6312 39.4283 53 38.5 53ZM59.5 53H52.5C51.5717 53 50.6815 52.6312 50.0251 51.9749C49.3688 51.3185 49 50.4283 49 49.5C49 48.5717 49.3688 47.6815 50.0251 47.0251C50.6815 46.3687 51.5717 46 52.5 46H59.5C60.4283 46 61.3185 46.3687 61.9749 47.0251C62.6313 47.6815 63 48.5717 63 49.5C63 50.4283 62.6313 51.3185 61.9749 51.9749C61.3185 52.6312 60.4283 53 59.5 53ZM70 32H14V28.5C14 27.5717 14.3687 26.6815 15.0251 26.0251C15.6815 25.3687 16.5717 25 17.5 25H66.5C67.4283 25 68.3185 25.3687 68.9749 26.0251C69.6313 26.6815 70 27.5717 70 28.5V32Z" fill="white"/>
-                            </svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt">
-                            design de interfaces
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="box-activity">
-                <div class="developer-web">
-                    <div class="svgclass">
-                        <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M59.1657 31.9997C59.1657 28.4978 58.4759 25.0302 57.1358 21.7949C55.7957 18.5595 53.8314 15.6198 51.3552 13.1436C48.879 10.6673 45.9392 8.70309 42.7039 7.36296C39.4685 6.02284 36.0009 5.33308 32.499 5.33308C25.4266 5.33308 18.6438 8.1426 13.6428 13.1436C8.64185 18.1445 5.83234 24.9273 5.83234 31.9997C5.83234 39.0722 8.64185 45.855 13.6428 50.8559C18.6438 55.8569 25.4266 58.6664 32.499 58.6664C39.5714 58.6664 46.3542 55.8569 51.3552 50.8559C56.3562 45.855 59.1657 39.0722 59.1657 31.9997ZM53.6457 29.3331H45.8323C45.3925 23.0615 43.2437 17.03 39.619 11.8931C43.3429 13.2157 46.6263 15.5466 49.103 18.626C51.5797 21.7054 53.1524 25.4122 53.6457 29.3331ZM24.7123 34.6664H40.499C39.8166 41.2546 37.0085 47.4418 32.499 52.2931C27.9925 47.4621 25.2488 41.2512 24.7123 34.6664ZM24.7123 29.3331C25.3334 22.778 28.0659 16.6017 32.499 11.7331C37.0449 16.5494 39.8593 22.7412 40.499 29.3331H24.7123ZM25.6723 11.8131C22.0285 16.9785 19.8451 23.031 19.3523 29.3331H11.3523C11.8561 25.3637 13.466 21.6161 15.9981 18.5181C18.5303 15.4201 21.8826 13.0966 25.6723 11.8131ZM11.3523 34.6664H19.3523C19.7915 40.9631 21.96 47.0165 25.619 52.1597C21.8429 50.8699 18.5043 48.5469 15.9824 45.4546C13.4605 42.3623 11.8564 38.6247 11.3523 34.6664ZM39.4857 52.1331C43.1348 46.9882 45.3274 40.9538 45.8323 34.6664H53.699C53.1947 38.6137 51.5964 42.3413 49.0847 45.4279C46.573 48.5145 43.2481 50.837 39.4857 52.1331Z" fill="white"/></svg>
-                    </div>
-                    <div class="material-symbols-txt">
-                        <p class="material-txt">
-                            desenvolvimento web
-                        </p>
-                    </div>
+            <div class="partners-area-img">
+                <div *ngFor="let partner of partners" class="partner-img">
+                    <img class="partner-img" [src]="partner.imgSrc" [alt]="partner.altText">
                 </div>
             </div>
         </div>
