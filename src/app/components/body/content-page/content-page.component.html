@@ -1,0 +1,96 @@
+<div class="content--row">
+    <div class="conten">
+        <div class="content-txt00">
+            <h2 class="txt00">CODATA é a coordenadoria de análise de dados da Prefeitura de São Paulo.</h2>
+            <p class="ptxt00">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus minima consequatur totam dolorem optio alias ab voluptas veniam pariatur nulla suscipit officia deleniti inventore nobis ullam, doloribus distinctio vero iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum obcaecati quisquam voluptatem non quia aperiam dolores esse, earum ipsam! Dignissimos soluta illo fugiat libero temporibus ipsa in voluptas est autem!</p>
+        </div>
+    </div>
+    <div class="box-conten">
+        <div class="box-big">
+            <div *ngFor="let item of bigContents" class="box-conten-big">
+                <div class="conten-txt-btn">
+                    <div class="btn-conten-box">
+                        <button class="button">{{ item.buttonNews }}</button>
+                        <button class="button">{{ item.buttonProjects }}</button>
+                    </div>
+                    <div>
+                        <h2 class="txt-title">{{ item.title }}</h2>
+                    </div>
+                    <div><p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="box-small">
+            <div *ngFor="let item of smallContents" class="box-conten-small">
+              <div class="btn-conten-box">
+                <button class="button">{{ item.buttonLabel }}</button>
+              </div>
+              <div>
+                <h2 class="txt-title">{{ item.title }}</h2>
+              </div>
+              <div>
+                <p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div *ngIf="openedPopupSlug !== null" class="closePopup" (click)="closePopup()">
+    </div>
+    <div class="activity-area">
+        <div class="txt-activity">
+          <h2 class="title-activity">atividades</h2>
+        </div>
+        <div class="box-activity00">
+          <div *ngFor="let atividade of atividades" class="box-activity" (click)="openPopup(atividade.slug)">
+            <div [ngClass]="atividade.class">
+              <div class="svgclass">
+                <svg [attr.viewBox]="atividade.svg.viewBox" [attr.width]="atividade.svg.width" [attr.height]="atividade.svg.height" xmlns="atividade.xmlns" fill="#FFFFFF">
+                  <path [attr.d]="atividade.svg.path"></path>
+                </svg>
+              </div>
+              <div class="material-symbols-txt">
+                <p class="material-txt">{{ atividade.text }}</p>
+              </div>
+            </div>
+            <div class="pop-up" *ngIf="isPopupOpen(atividade.slug)">
+              <div class="txt-PopUp">
+                <p class="txt-p-popup">{{ atividade.description }}</p>
+                <div class="btn-popup">
+                  <button class="button">saiba mais</button> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="btn-content">
+        <div class="btn-content00">
+            <button class="btn-contente">sobre nós</button>
+        </div>
+        <div class="btn-content01">
+            <button class="btn-contente"> contato </button>
+        </div>
+    </div>
+    <div class="cont-repositor">
+        <div class="line-cont"></div>
+        <div class="content-people">
+          <div *ngFor="let item of repositoryData" class="{{ item.class }}">
+            <p class="number">{{ item.number }}</p>
+            <p class="txt">{{ item.text }}</p>
+          </div>
+        </div>
+        <div class="line-cont"></div>
+      </div>
+    <div class="content-partners">
+        <div class="partners-area">
+            <div class="partners-area-txt">
+                <h2 class="partners-txt">parceiros</h2>
+            </div>
+            <div class="partners-area-img">
+                <div *ngFor="let partner of partners" class="partner-img">
+                    <img class="partner-img" [src]="partner.imgSrc" [alt]="partner.altText">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
