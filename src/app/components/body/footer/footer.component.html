@@ -1,0 +1,35 @@
+<div class="footer">
+    <div class="footer--row">
+        <div class="footer-logo" *ngFor="let icons_footers of icon_logo">
+            <div [ngClass]="icons_footers.class">
+                <svg
+                        [attr.viewBox]="icons_footers.svg.viewBox"
+                        [attr.width]="icons_footers.svg.width"
+                        [attr.height]="icons_footers.svg.height"
+                        xmlns="icons_footers.xmlns"
+                        fill="#FFFFFF"
+                        >
+                        <path [attr.d]="icons_footers.svg.path"></path>
+                    </svg>
+            </div>
+        </div>
+        <div class="icons" *ngFor="let footers of footer">
+            <div [ngClass]="footers.class">
+                    <div class="svg">
+                        <svg
+                        [attr.viewBox]="footers.svg.viewBox"
+                        [attr.width]="footers.svg.width"
+                        [attr.height]="footers.svg.height"
+                        xmlns="footers.xmlns"
+                        fill="#FFFFFF"
+                        >
+                        <path [attr.d]="footers.svg.path"></path>
+                    </svg>
+                    </div>
+                    <div class="txt">
+                        <p>{{ footers.text }}</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
