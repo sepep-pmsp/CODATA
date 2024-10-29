@@ -7,6 +7,34 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './projects.scss'
 })
 export class ProjectsComponent implements OnInit{
+  form_selection = [
+    {
+      className:'form-proj-option',
+      value: 'all',
+      txtName :'tudo',
+    },
+    {
+      className:'form-proj-option',
+      value: 'sistemas',
+      txtName :'sistemas',
+    },
+    {
+      className:'form-proj-option',
+      value: 'banco-de-dados',
+      txtName :' banco de dados',
+    },
+    {
+      className:'form-proj-option',
+      value: 'estudos',
+      txtName :'estudos',
+    },
+    {
+      className:'form-proj-option',
+      value: 'dashboard',
+      txtName :'dashboard',
+    },
+  ];
+
   selected: string = 'all';
 
   constructor(
@@ -23,5 +51,13 @@ export class ProjectsComponent implements OnInit{
   navigateToPage(filter: string) {
     this.selected = filter;
     this.router.navigate([`/projetos/${filter}`]); 
+  }
+
+  isDropdownOpen = false;
+  onOpen() {
+    this.isDropdownOpen = true;
+  }
+  onClose() {
+    this.isDropdownOpen = false;
   }
 }

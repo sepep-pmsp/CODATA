@@ -1,36 +1,35 @@
 <div class="projects-all">
-    <mat-form-field>
-      <mat-select [(value)]="selected" (selectionChange)="navigateToPage($event.value)">
-        <mat-option value="all">Tudo</mat-option>
-        <mat-option value="sistemas">sistemas</mat-option>
-        <mat-option value="banco-de-dados">Banco de Dados</mat-option>
-        <mat-option value="estudos">Estudos</mat-option>
-        <mat-option value="dashboard">Dashboard</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <!-- Layout dinâmico -->
-    <div *ngIf="selected === 'all'">
-      <h2>Todos os Projetos</h2>
-      <!-- Conteúdo para mostrar todos os projetos -->
-    </div>
-    <div *ngIf="selected === 'sistemas'">
-      <h2>sistemas</h2>
-      <!-- Conteúdo para mostrar todos os sistemas -->
+    <div class="forms-projects" >
+      <mat-form-field class="form-proj-00">
+        <mat-select 
+          [(value)]="selected" 
+          (selectionChange)="navigateToPage($event.value)" 
+          (opened)="onOpen()" 
+          (closed)="onClose()" 
+          class="form-proj-select">
+          <mat-option *ngFor="let forms of form_selection" class="{{ forms.className }}" value="{{ forms.value }}">{{ forms.txtName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   
-    <div *ngIf="selected === 'banco-de-dados'">
-      <h2>Banco de Dados</h2>
-      <!-- Conteúdo específico para Banco de Dados -->
-    </div>
-  
-    <div *ngIf="selected === 'estudos'">
-      <h2>Estudos</h2>
-      <!-- Conteúdo específico para Estudos -->
-    </div>
-  
-    <div *ngIf="selected === 'dashboard'">
-      <h2>Dashboard</h2>
-      <!-- Conteúdo específico para Dashboard -->
+    <div class="all-projects-area" [ngClass]="{'blurred-background': isDropdownOpen}">
+      <div *ngIf="selected === 'all'">
+        <app-project></app-project>
+      </div>
+      <div *ngIf="selected === 'sistemas'">
+        <app-sistemas></app-sistemas>
+      </div>
+    
+      <div *ngIf="selected === 'banco-de-dados'">
+        <app-bd></app-bd>
+      </div>
+    
+      <div *ngIf="selected === 'estudos'">
+        <app-estudos></app-estudos>
+      </div>
+    
+      <div *ngIf="selected === 'dashboard'">
+        <app-deshboards></app-deshboards>
+      </div>
     </div>
 </div>
