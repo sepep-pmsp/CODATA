@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isLogoHidden = false;
   isSearchVisible = false;
   isMenuOpen = false; 
@@ -43,5 +44,25 @@ export class HeaderComponent {
   }
   toggleSubmenu(menu: 'projetos' | 'institucional'): void {
     this.dropdownState[menu] = !this.dropdownState[menu];
+  }
+
+  selected: string = 'all'; 
+  
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const filter = params.get('filter');
+      this.selected = filter ? filter : 'all';
+    });
+    this.router.events.subscribe(() => {
+      this.isMenuOpen = false;
+    });
+  }
+
+  navigateToPage(filter: string) {
+    this.selected = filter; 
+    this.isMenuOpen = false; 
+    this.router.navigate([`/projetos/${filter}`]);
   }
 }
