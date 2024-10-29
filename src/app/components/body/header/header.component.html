@@ -17,20 +17,20 @@
                     <div class="list-toggle-00">
                         <ul class="list-toggle-01">
                             <li class="list-toggle-02">
-                              <a href="" class="txt">início</a>
+                              <a  class="txt">início</a>
                             </li>
                             <li class="list-toggle-02">
                               <div class="btn-toggle-00">
-                                <p class="txt"><a [routerLink]="'projetos'">projetos</a></p>
+                                <p class="txt"><a (click)="navigateToPage('all')">projetos</a></p>
                                 <button (click)="toggleSubmenu('projetos')" class="dropdown-btn">
                                   <span class="arrow" [ngClass]="{'open': dropdownState.projetos}">▼</span>
                                 </button>
                               </div>
                               <ul [ngClass]="{'open': dropdownState.projetos}" class="submenu">
-                                <li><a href="" class="txt-drop">sistemas</a></li>
-                                <li><a href="" class="txt-drop">banco de dados</a></li>
-                                <li><a href="" class="txt-drop">estudos</a></li>
-                                <li><a href="" class="txt-drop">dashboard</a></li>
+                                <li><a (click)="navigateToPage('sistemas')"  class="txt-drop">sistemas</a></li>
+                                <li><a (click)="navigateToPage('banco-de-dados')" class="txt-drop">banco de dados</a></li>
+                                <li><a (click)="navigateToPage('estudos')" class="txt-drop">estudos</a></li>
+                                <li><a (click)="navigateToPage('dashboard')" class="txt-drop">dashboard</a></li>
                               </ul>
                             </li>
                             <li class="list-toggle-02-ist">

@@ -8,7 +8,7 @@ import { ProjectsComponent } from './components/project/project';
 const routes: Routes = [
   { path: '', pathMatch: 'full' , component: HomeComponent },
   { path: 'pop-up/:slug', component: ContentPageComponent },
-  { path: 'projetos', component: ProjectsComponent },
+  { path: 'projetos/:filter', component: ProjectsComponent },
 ];
 
 @NgModule({

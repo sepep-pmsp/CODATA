@@ -1,11 +1,36 @@
 <div class="projects-all">
     <mat-form-field>
-        <mat-select [(value)]="selected">
-          <mat-option value="all">Tudo</mat-option>
-          <mat-option value="option1">sistemas</mat-option>
-          <mat-option value="option2">dashboard</mat-option>
-          <mat-option value="option3">estudos</mat-option>
-          <mat-option value="option4">Banco de dados</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <mat-select [(value)]="selected" (selectionChange)="navigateToPage($event.value)">
+        <mat-option value="all">Tudo</mat-option>
+        <mat-option value="sistemas">sistemas</mat-option>
+        <mat-option value="banco-de-dados">Banco de Dados</mat-option>
+        <mat-option value="estudos">Estudos</mat-option>
+        <mat-option value="dashboard">Dashboard</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Layout dinâmico -->
+    <div *ngIf="selected === 'all'">
+      <h2>Todos os Projetos</h2>
+      <!-- Conteúdo para mostrar todos os projetos -->
+    </div>
+    <div *ngIf="selected === 'sistemas'">
+      <h2>sistemas</h2>
+      <!-- Conteúdo para mostrar todos os sistemas -->
+    </div>
+  
+    <div *ngIf="selected === 'banco-de-dados'">
+      <h2>Banco de Dados</h2>
+      <!-- Conteúdo específico para Banco de Dados -->
+    </div>
+  
+    <div *ngIf="selected === 'estudos'">
+      <h2>Estudos</h2>
+      <!-- Conteúdo específico para Estudos -->
+    </div>
+  
+    <div *ngIf="selected === 'dashboard'">
+      <h2>Dashboard</h2>
+      <!-- Conteúdo específico para Dashboard -->
+    </div>
 </div>
