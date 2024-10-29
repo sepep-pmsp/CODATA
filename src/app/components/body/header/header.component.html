@@ -1,7 +1,7 @@
 <div class="header--row">
     <div class="header-logos">
         <div class="header-logo-icon">
-            <a href="">
+            <a [routerLink]="''">
                 <img class="header-logo-icon" src="../../../../assets/images/icon.svg">
             </a>
         </div>
@@ -20,10 +20,12 @@
                               <a href="" class="txt">início</a>
                             </li>
                             <li class="list-toggle-02">
-                              <button (click)="toggleSubmenu('projetos')" class="dropdown-btn">
-                                <p class="txt">projetos</p>
-                                <span class="arrow" [ngClass]="{'open': dropdownState.projetos}">▼</span>
-                              </button>
+                              <div class="btn-toggle-00">
+                                <p class="txt"><a [routerLink]="'projetos'">projetos</a></p>
+                                <button (click)="toggleSubmenu('projetos')" class="dropdown-btn">
+                                  <span class="arrow" [ngClass]="{'open': dropdownState.projetos}">▼</span>
+                                </button>
+                              </div>
                               <ul [ngClass]="{'open': dropdownState.projetos}" class="submenu">
                                 <li><a href="" class="txt-drop">sistemas</a></li>
                                 <li><a href="" class="txt-drop">banco de dados</a></li>
