@@ -1,5 +1,4 @@
 .projects-all{
-    height: 100%;
     padding: 16rem 1rem 2rem 1rem;
 }
 .forms-projects{
@@ -76,9 +75,17 @@
 ::ng-deep #mat-option-0{
     gap: 5rem;
 }
+::ng-deep #mat-option-0,
+::ng-deep #mat-option-1,
+::ng-deep #mat-option-2,
+::ng-deep #mat-option-3,
+::ng-deep #mat-option-4{
+    background-color: rgb(255 255 255 / 80%);
+}
 
 .form-proj-option{
     border: 1px solid;
     width: 90%;
     border-radius: 1rem;
+    background-color: #ffffffbd;
 }

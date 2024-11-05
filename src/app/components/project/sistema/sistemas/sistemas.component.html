@@ -1,1 +1,15 @@
-<p>sistemas works!</p>
+<div class="system__cards">
+  <div class="card" *ngFor="let sistema of sistemas">
+    <div class="card__thumb">
+        <img [src]="sistema.svg" alt="Image" class="card__image">
+    </div>
+    <div class="card__caption">
+        <h2 class="card__title">
+            <a [routerLink]="['/sistemas/detalhes', sistema.url]">{{ sistema.title }}</a>
+        </h2>
+        <div class="card__txt">
+            <p class="card__description">{{ sistema.description }}</p>
+        </div>
+    </div>
+  </div>
+</div>
