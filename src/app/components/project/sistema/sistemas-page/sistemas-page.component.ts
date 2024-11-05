@@ -17,12 +17,17 @@ export class SistemasPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Pegamos o parâmetro `url` da rota
     const url = this.activatedRoute.snapshot.paramMap.get('url');
     if (url) {
-      // Buscar o projeto usando o `url` do sistema
       this.sistemasService.buscarPorUrl(url).subscribe((sistema) => {
         this.sistema = sistema;
+      });
+    }
+    const scrollContainer = document.querySelector('.page_system--row');
+      if (scrollContainer) {
+      scrollContainer.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        (scrollContainer as HTMLElement).scrollLeft += (event as WheelEvent).deltaY;
       });
     }
   }
