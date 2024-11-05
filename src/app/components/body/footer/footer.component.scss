@@ -4,6 +4,8 @@
     height: 12rem;
     border-top-left-radius: 5rem;
     border-top-right-radius: 5rem;
+    z-index: 1;
+    position: absolute;
 }
 .footer--row{
     display: flex;
