@@ -1,0 +1,48 @@
+<div class="page_system--row">
+    <div class="page_system">
+        <div class="page_system-contents">
+            <div class="__page__">
+                <div class="system_contan">
+                    <div class="page_system-title">
+                        <h1>{{ sistema?.title }}</h1>
+                    </div>
+                    <div class="system_content">
+                        <div class="syste" *ngFor="let section of sistema?.sections">
+                            <h2 class="system_title">{{ section.title }}</h2>
+                            <p class="sytem_paragraph">{{ section.paragraph }}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="page_system-list">
+                    <div class="system-list">
+                        <ul class="list-contents">
+                            <li class="list_system" *ngFor="let item of sistema?.listContents">
+                                <h3 class="item_title">{{ item.title }}</h3>
+                                <p class="item_prgf">{{ item.content }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="system-img_btn">
+                <div class="img_sys">
+                    <div class="system_img">
+                    </div>
+                    <div class="system_img">
+                    </div>
+                    <div class="system_img">
+                    </div>
+                </div>
+                <div class="system_btn">
+                    <span class="txt_btn">
+                        arraste para o lado
+                    </span>
+                    <span class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

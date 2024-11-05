@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './body/header/header.component';
 import { HomeComponent } from './body/home/home.component';
 import { RouterModule } from '@angular/router';
-import { SistemasComponent } from './project/sistemas/sistemas.component';
-import { BdPageComponent } from './project/bd-page/bd-page.component';
-import { ProjectComponent } from './project/projetos/project/project.component';
+import { BdPageComponent } from './project/banco-dados/bd-page/bd-page.component';
+import { ProjectComponent } from './project/projetos/projects/project.component';
 import { EstudosComponent } from './project/estudo/estudos/estudos.component';
 import { DeshboardsComponent } from './project/dashboard/deshboards/deshboards.component';
 import { PagesProjectsComponent } from './project/projetos/pages-projects/pages-projects.component';
 import { ContentPageComponent } from './body/content-page/content-page.component';
 import { FooterComponent } from './body/footer/footer.component';
-
+import { ProjectsComponent } from './project/project';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { DashboardPageComponent } from './project/dashboard/dashboard-page/dashboard-page.component';
+import { BdComponent } from './project/banco-dados/bd/bd.component';
+import { EstudosPageComponent } from './project/estudo/estudos-page/estudos-page.component';
+import { SistemasComponent } from './project/sistema/sistemas/sistemas.component';
+import { SistemasPageComponent } from './project/sistema/sistemas-page/sistemas-page.component';
 
 
 
@@ -27,12 +35,21 @@ import { FooterComponent } from './body/footer/footer.component';
     SistemasComponent, 
     BdPageComponent, 
     ContentPageComponent, 
-    FooterComponent
+    FooterComponent,
+    ProjectsComponent,
+    DashboardPageComponent,
+    BdComponent,
+    EstudosPageComponent,
+    SistemasPageComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
   ],
-  exports: [HeaderComponent, HomeComponent , FooterComponent],
+  exports: [HeaderComponent, HomeComponent , FooterComponent, ProjectsComponent],
 })
 export class ComponentsModule { }
