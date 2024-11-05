@@ -1,0 +1,59 @@
+.page_system--row {
+    padding-top: 6.3rem;
+    width: 100vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+    overflow-y: hidden;
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.page_system{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 2rem 0 10rem;
+}
+
+.page_system-contents {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: max-content;
+}
+
+.system-img_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.system_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.system_img {
+    background-color: black;
+    width: 70rem;
+    height: 37rem;
+    border-radius: 3rem;
+    flex-shrink: 0; 
+}
+
+.sytem_paragraph{
+    width: 25rem;
+    text-align: justify;
+}
