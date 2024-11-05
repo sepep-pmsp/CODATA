@@ -1,64 +1,46 @@
 <div class="page_system--row">
     <div class="page_system">
-        <div class="page_system-title">
-            <h1>Teste</h1>
-        </div>
         <div class="page_system-contents">
-            <div class="system_content">
-                <div class="system-what">
-                    <h2>Lorem</h2>
-                    <p class="sytem_paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.</p>
+            <div class="__page__">
+                <div class="system_contan">
+                    <div class="page_system-title">
+                        <h1>{{ sistema?.title }}</h1>
+                    </div>
+                    <div class="system_content">
+                        <div class="syste" *ngFor="let section of sistema?.sections">
+                            <h2 class="system_title">{{ section.title }}</h2>
+                            <p class="sytem_paragraph">{{ section.paragraph }}</p>
+                        </div>
+                        
+                    </div>
                 </div>
-                <div class="system-as">
-                    <h2>Lorem</h2>
-                    <p class="sytem_paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.</p>
-                </div>
-                <div class="system-who">
-                    <h2>Lorem</h2>
-                    <p class="sytem_paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.</p>
-                </div>
-                <div class="system-why">
-                    <h2>Lorem</h2>
-                    <p class="sytem_paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.</p>
-                </div>
-            </div>
-            <div class="page_system-list">
-                <div class="system-list">
-                    <ul class="list-contents">
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                        <li class="list_system">
-                            <h3>lorem</h3>
-                            <p>Lorem ipsum dolor sit</p>
-                        </li>
-                    </ul>
+                <div class="page_system-list">
+                    <div class="system-list">
+                        <ul class="list-contents">
+                            <li class="list_system" *ngFor="let item of sistema?.listContents">
+                                <h3 class="item_title">{{ item.title }}</h3>
+                                <p class="item_prgf">{{ item.content }}</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="system-img_btn">
-                <div class="system_img">
+                <div class="img_sys">
+                    <div class="system_img">
+                    </div>
+                    <div class="system_img">
+                    </div>
+                    <div class="system_img">
+                    </div>
                 </div>
                 <div class="system_btn">
-                    <button>
-                        fuck you
-                    </button>
+                    <span class="txt_btn">
+                        arraste para o lado
+                    </span>
+                    <span class="btn">
+                        <i class="fa-solid fa-play"></i>
+                    </span>
                 </div>
             </div>
         </div>

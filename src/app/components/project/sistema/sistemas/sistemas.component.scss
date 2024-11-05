@@ -1,16 +1,15 @@
 .system__cards{
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 .card {
-    width: 25rem;
-    height: 23rem;
+    background-color: black;
+    width: 59rem;
+    height: 20rem;
     border-radius: 2rem;
     display: flex;
     align-content: center;
@@ -21,12 +20,15 @@
     position: relative;
 
     .card__thumb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 95%;
         height: 95%;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         position: relative;
         overflow: hidden; 
-
         &:hover {
             .card__image {
                 opacity: 0;
@@ -40,8 +42,7 @@
     }
 
     .card__image {
-        width: 100%;
-        height: 100%;
+        width: 20rem;
         transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         position: relative;
         z-index: 0; 
@@ -63,7 +64,7 @@
         border-radius: 2rem;
         padding: 1rem;
         transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-        background-color: rgb(255, 255, 255); 
+        background-color: rgb(253, 253, 253); 
         &:hover{
             opacity: 2;
             color: black;
