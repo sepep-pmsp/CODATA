@@ -6,6 +6,7 @@ import { Estudos } from '../../data.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class EstudosService {
   
   constructor(private dataService: DataService) {}

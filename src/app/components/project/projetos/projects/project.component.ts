@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { BancoDeDados, Dashboard, Estudos, Sistemas } from '../../../data.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProjetoService } from '../projeto.service';
+
 
 @Component({
   selector: 'app-project',
@@ -24,6 +26,4 @@ export class ProjectComponent {
       });
     }
   }
-  
-
 }

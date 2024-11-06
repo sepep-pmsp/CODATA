@@ -3,9 +3,11 @@ import { DataService } from '../../data-service.service';
 import { BancoDeDados } from '../../data.model';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class BdService {
 
   constructor(private dataService: DataService) {}
