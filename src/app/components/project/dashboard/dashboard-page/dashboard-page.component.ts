@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Dashboard } from '../../../data.model';
+import { ActivatedRoute } from '@angular/router';
+import { DashboardService } from '../dashboard-service.service';
 
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
   styleUrl: './dashboard-page.component.scss'
 })
-export class DashboardPageComponent {
+export class DashboardPageComponent implements OnInit {
+  dashboard: Dashboard | undefined;
 
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private dashboardService: DashboardService
+  ) {}
+
+  ngOnInit(): void {
+    const url = this.activatedRoute.snapshot.paramMap.get('url');
+    if (url) {
+      this.dashboardService.buscarPorUrl(url).subscribe((dashboard) => {
+        this.dashboard = dashboard;
+      });
+    }
+  }
 }
