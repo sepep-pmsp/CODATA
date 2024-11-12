@@ -230,9 +230,12 @@ export class DataService {
   private estudos: Estudos[] = [
     {
       id:'sfjshdfshdfs',
-      url:'teste02',
-      title:'+Info',
+      url:'teste_de_estudos',
+      title:'Teste de estudos',
+      subtitle:'Teste de estudos',
+      text:'Im never gonna dance again...',
       description: 'Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool',
+      dates: 2023,
       svg:'assets/images/info.svg',
       status: 'sistema',
       linkPage:'teste',
@@ -240,22 +243,76 @@ export class DataService {
       listContents: [
         { title: 'Título', content: 'Lorem ipsum dolor sit' },
         { title: 'Período', content: 'Lorem ipsum dolor sit' },
-        { title: 'Categoria', content: 'Lorem ipsum dolor sit' },
-        { title: 'Equipe', content: ['Membro 1\n'] }, 
         { title: 'Parceiros', content: ['Parceiro 1\n'] },
+        { title: 'Equipe', content: ['Membro 1\n'] }, 
         { title: 'Tecnologia', content: 'Lorem ipsum dolor sit' },
       ],
       sections: [
-        { title: 'o que', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.' },
-        { title: 'como', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur aliquid voluptate temporibus reprehenderit! Omnis reprehenderit facere vero. Praesentium totam voluptates soluta delectus. Quia placeat tempora debitis eligendi.' },
-        { title: 'quem', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur...' },
-        { title: 'por que', paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, hic voluptas aspernatur...' }
+        { title: 'o que', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'como', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'quem', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'por que', paragraph: 'Lorem ipsum dolor sit amet,' }
       ],
       additionalImages: [
         'assets/images/extra1.png',
         'assets/images/extra2.png'
       ],
-
+      image:[
+        {image_1:'', 
+          image_2:'', 
+          image_3:''
+        }
+      ],
+      minitext: [
+        { minitext_00:'', 
+          minitext_01:'', 
+          minitext_02:'', 
+          minitext_03:''
+        }
+      ],
+    },
+    {
+      id:'sfjshdfshdfs_01',
+      url:'teste_de_estudos_01',
+      title:'Teste de estudos_01',
+      subtitle:'Teste de estudos_01',
+      text:'Im never gonna dance again...',
+      description: 'Im never gonna dance again Guilty _01',
+      dates: 2023,
+      svg:'assets/images/info.svg',
+      status: 'sistema',
+      linkPage:'teste',
+      quote:'http',
+      listContents: [
+        { title: 'Título', content: 'Lorem ipsum dolor sit' },
+        { title: 'Período', content: 'Lorem ipsum dolor sit' },
+        { title: 'Parceiros', content: ['Parceiro 1\n'] },
+        { title: 'Equipe', content: ['Membro 1\n'] }, 
+        { title: 'Tecnologia', content: 'Lorem ipsum dolor sit' },
+      ],
+      sections: [
+        { title: 'o que', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'como', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'quem', paragraph: 'Lorem ipsum dolor sit amet' },
+        { title: 'por que', paragraph: 'Lorem ipsum dolor sit amet,' }
+      ],
+      additionalImages: [
+        'assets/images/extra1.png',
+        'assets/images/extra2.png'
+      ],
+      image:[
+        {image_1:'', 
+          image_2:'', 
+          image_3:''
+        }
+      ],
+      minitext: [
+        { minitext_00:'', 
+          minitext_01:'', 
+          minitext_02:'', 
+          minitext_03:''
+        }
+      ],
     }
   ];
 
