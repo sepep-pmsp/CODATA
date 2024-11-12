@@ -24,6 +24,6 @@ RUN npm install
 
 RUN ng build
 
-FROM nginx:1.27-alpine
+FROM nginx:1.26-alpine
 
 COPY --from=build /usr/src/app/dist/codata/browser /usr/share/nginx/html
