@@ -1,10 +1,24 @@
 FROM node:23-alpine AS build
 
+RUN npm install -g @angular/cli
+
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app
+COPY tsconfig.app.json .
 
-RUN npm install -g @angular/cli
+COPY tsconfig.json .
+
+COPY tsconfig.spec.json .
+
+COPY angular.json .
+
+COPY package-lock.json .
+
+COPY package.json .
+
+COPY public ./public
+
+COPY src ./src
 
 RUN npm install
 
