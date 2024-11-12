@@ -1,1 +1,15 @@
-<p>bd-page works!</p>
+<div class="dash__row" *ngFor="let dashboard of dashboards; let index = index">
+    <div class="box-dash" [ngClass]="'box-dash-' + index">
+      <div class="box_txt">
+        <h1 class="txt_title"><a [routerLink]="['/dashboard/page', dashboard.url]">{{ dashboard.title }}</a></h1>
+        <h3 class="txt_subtitle_3">{{ dashboard.subtitle }}</h3>
+      </div>
+      <div [class]="dashboard_image[index].class">
+        <img 
+        [class]="dashboard_image[index].img_class"
+        *ngFor="let _ of [].constructor(dashboard_image[index]?.repeat)" 
+        [src]="dashboard_image[index].img">
+      </div>
+    </div>
+  </div>
+  

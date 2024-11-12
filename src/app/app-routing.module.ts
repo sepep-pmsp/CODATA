@@ -5,6 +5,7 @@ import { ContentPageComponent } from './components/body/content-page/content-pag
 import { ProjectsComponent } from './components/project/project';
 import { SistemasComponent } from './components/project/sistema/sistemas/sistemas.component';
 import { SistemasPageComponent } from './components/project/sistema/sistemas-page/sistemas-page.component';
+import { DashboardPageComponent } from './components/project/dashboard/dashboard-page/dashboard-page.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'projetos/:filter', component: ProjectsComponent },
   { path: 'sistemas/:url', component: SistemasComponent },
   { path: 'sistemas/detalhes/:url', component: SistemasPageComponent },
+  { path: 'dashboard/page/:url', component: DashboardPageComponent },
 ];
 
 @NgModule({

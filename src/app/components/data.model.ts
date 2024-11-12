@@ -32,11 +32,13 @@ export interface Dashboard  {
     id: string;
     url: string;
     title: string;
+    subtitle: string;
     caption: string ;
     text: string;
     status?: string;
+    img?: string;
     linkPage?: string;
-    linkGitGub?: string;
+    linkGitHub?: string;
     dashboard?: string; 
 }
 
