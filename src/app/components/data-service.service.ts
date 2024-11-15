@@ -272,16 +272,16 @@ export class DataService {
       ],
     },
     {
-      id:'sfjshdfshdfs_01',
-      url:'teste_de_estudos_01',
-      title:'Teste de estudos_01',
-      subtitle:'Teste de estudos_01',
+      id:'sfjshdfshdfsteste01',
+      url:'teste_de_estudosteste01',
+      title:'Teste de estudosteste01',
+      subtitle:'Teste de estudosteste01',
       text:'Im never gonna dance again...',
-      description: 'Im never gonna dance again Guilty _01',
+      description: 'Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool',
       dates: 2023,
       svg:'assets/images/info.svg',
       status: 'sistema',
-      linkPage:'teste',
+      linkPage:'testeteste01',
       quote:'http',
       listContents: [
         { title: 'Título', content: 'Lorem ipsum dolor sit' },
@@ -313,7 +313,7 @@ export class DataService {
           minitext_03:''
         }
       ],
-    }
+    },
   ];
 
   private dashboard: Dashboard[] = [
