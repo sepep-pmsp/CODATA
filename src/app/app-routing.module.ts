@@ -6,6 +6,7 @@ import { ProjectsComponent } from './components/project/project';
 import { SistemasComponent } from './components/project/sistema/sistemas/sistemas.component';
 import { SistemasPageComponent } from './components/project/sistema/sistemas-page/sistemas-page.component';
 import { DashboardPageComponent } from './components/project/dashboard/dashboard-page/dashboard-page.component';
+import { EstudosPageComponent } from './components/project/estudo/estudos-page/estudos-page.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'sistemas/:url', component: SistemasComponent },
   { path: 'sistemas/detalhes/:url', component: SistemasPageComponent },
   { path: 'dashboard/page/:url', component: DashboardPageComponent },
+  { path: 'estudo/article/:url', component: EstudosPageComponent }
 ];
 
 @NgModule({

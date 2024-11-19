@@ -1,1 +1,88 @@
-<p>estudos-page works!</p>
+<div class="page_estudos" *ngIf="estudo">
+    <div class="_align_content_list">
+        <div>
+            <div class="_align_title">
+                <h1 class="questions_title">{{ estudo.title}}</h1>
+            </div>
+            <div class="questions">
+                <div class="list_questions" *ngFor="let section of estudo?.sections">
+                    <h2 class="questions_title00">{{ section.title }}</h2>
+                    <p class="questions_txt">{{ section.paragraph }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="list_cont">
+            <div class="_align_list">
+                <ul class="list" *ngFor="let item of estudo?.listContents">
+                    <li class="cont">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.content }}</p>
+                    </li>
+                </ul>
+                <div class="btn_dwnld">
+                    <button class="download">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px"
+                            fill="#000000">
+                            <path
+                                d="M480-318.09 266.65-531.44l57.13-56 116.61 116.61V-814.7h79.22v343.87l116.61-116.61 57.13 56L480-318.09ZM225.09-145.87q-32.51 0-55.87-23.35-23.35-23.36-23.35-55.87v-143h79.22v143h509.82v-143h79.79v143q0 32.48-23.53 55.85-23.52 23.37-56.26 23.37H225.09Z" />
+                        </svg>
+                    </button>
+                    <p class="txt_btn">PDF completo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carou_txt">
+        <div class="carousel-container">
+            <div class="carousel-main">
+                <img [src]="slides[currentSlide].image" alt="Imagem do carrossel"
+                    class="carousel-image slide-animation" />
+                <div class="carousel-description slide-animation">
+                    <p>{{ slides[currentSlide].caption }}</p>
+                    <button (click)="nextSlide()" class="carousel-next" aria-label="Próximo Slide">
+                        &#9654;
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-thumbnails">
+                <div *ngFor="let slide of visibleSlides; let i = index" [class.active]="i === activeThumbnail"
+                    class="thumbnail slide-animation" (click)="setSlide(i)">
+                    <img [src]="slide.image" alt="Miniatura {{ i }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="conten__stud">
+            <div class="grid_text">
+                <div class="__box_content" *ngFor="let content of estudo?.minitext">
+                    <p>{{ content.minitext_00 }}</p>
+                </div>
+                <div class="__quote__">
+                    <cite class="___quotes___">“{{ estudo.quote }}„</cite>
+                </div>
+                <div class="__img__">
+                    <img 
+                    class="conten__img" 
+                    *ngFor="let content of estudo?.image"
+                    src="{{ content.image_1 }}" 
+                    alt="Imagem do estudo">
+                    <p class="__img__txt__">{{ estudo.description }}</p>
+                </div>
+                <div class="__box_content" *ngFor="let content of estudo?.minitext">
+                    <p>{{ content.minitext_00 }}</p>
+                </div>
+            </div>
+        <div class="__exe_img_txt">
+            <div class="__exe_img">
+                <img
+                class="__img___exe__"
+                *ngFor="let content of estudo?.image"
+                src="{{ content.image_2 }}"
+                alt="">
+            </div>
+            <div class="__exe_txt">
+                <span class="txt">{{ estudo.text }}</span>
+            </div>
+        </div>
+    </div>
+</div>
