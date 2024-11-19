@@ -31,7 +31,7 @@ export interface Estudos {
     listContents?: { title: string, content: string | string[] }[];
     sections?: { title: string, paragraph: string }[];
     quote?: string;
-    minitext?: { minitext_00: string, minitext_01: string, minitext_02: string, minitext_03: string, }[];
+    minitext?: { minitext_00: string }[];
 }
 
 export interface Dashboard  {

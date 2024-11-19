@@ -233,13 +233,13 @@ export class DataService {
       url:'teste_de_estudos',
       title:'Teste de estudos',
       subtitle:'Teste de estudos',
-      text:'Im never gonna dance again...',
+      text:'Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool',
       description: 'Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool',
       dates: 2023,
       svg:'assets/images/info.svg',
       status: 'sistema',
       linkPage:'teste',
-      quote:'http',
+      quote:'Earum dolorem ea ipsum commodi ea autem consequuntur qui ratione neque qui molestiae eveniet non assumenda consequatur?',
       listContents: [
         { title: 'Título', content: 'Lorem ipsum dolor sit' },
         { title: 'Período', content: 'Lorem ipsum dolor sit' },
@@ -258,60 +258,16 @@ export class DataService {
         'assets/images/extra2.png'
       ],
       image:[
-        {image_1:'', 
-          image_2:'', 
-          image_3:''
+        {image_1:'https://picsum.photos/id/1043/800/450', 
+          image_2:'https://picsum.photos/id/1043/800/450', 
+          image_3:'https://picsum.photos/id/1043/800/450'
         }
       ],
       minitext: [
-        { minitext_00:'', 
-          minitext_01:'', 
-          minitext_02:'', 
-          minitext_03:''
-        }
-      ],
-    },
-    {
-      id:'sfjshdfshdfsteste01',
-      url:'teste_de_estudosteste01',
-      title:'Teste de estudosteste01',
-      subtitle:'Teste de estudosteste01',
-      text:'Im never gonna dance again...',
-      description: 'Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool',
-      dates: 2023,
-      svg:'assets/images/info.svg',
-      status: 'sistema',
-      linkPage:'testeteste01',
-      quote:'http',
-      listContents: [
-        { title: 'Título', content: 'Lorem ipsum dolor sit' },
-        { title: 'Período', content: 'Lorem ipsum dolor sit' },
-        { title: 'Parceiros', content: ['Parceiro 1\n'] },
-        { title: 'Equipe', content: ['Membro 1\n'] }, 
-        { title: 'Tecnologia', content: 'Lorem ipsum dolor sit' },
-      ],
-      sections: [
-        { title: 'o que', paragraph: 'Lorem ipsum dolor sit amet' },
-        { title: 'como', paragraph: 'Lorem ipsum dolor sit amet' },
-        { title: 'quem', paragraph: 'Lorem ipsum dolor sit amet' },
-        { title: 'por que', paragraph: 'Lorem ipsum dolor sit amet,' }
-      ],
-      additionalImages: [
-        'assets/images/extra1.png',
-        'assets/images/extra2.png'
-      ],
-      image:[
-        {image_1:'', 
-          image_2:'', 
-          image_3:''
-        }
-      ],
-      minitext: [
-        { minitext_00:'', 
-          minitext_01:'', 
-          minitext_02:'', 
-          minitext_03:''
-        }
+        { minitext_00: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.' },
+        { minitext_00: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.' },
+        { minitext_00: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.' },
+        { minitext_00: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum alias consectetur veniam hic exercitationem! Facere aliquid, unde, ducimus accusantium iusto nulla repellendus odio aspernatur, dignissimos illum labore a. Deserunt, quaerat.' }
       ],
     },
   ];
