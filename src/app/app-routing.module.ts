@@ -7,6 +7,7 @@ import { SistemasComponent } from './components/project/sistema/sistemas/sistema
 import { SistemasPageComponent } from './components/project/sistema/sistemas-page/sistemas-page.component';
 import { DashboardPageComponent } from './components/project/dashboard/dashboard-page/dashboard-page.component';
 import { EstudosPageComponent } from './components/project/estudo/estudos-page/estudos-page.component';
+import { BdPageComponent } from './components/project/banco-dados/bd-page/bd-page.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'sistemas/:url', component: SistemasComponent },
   { path: 'sistemas/detalhes/:url', component: SistemasPageComponent },
   { path: 'dashboard/page/:url', component: DashboardPageComponent },
-  { path: 'estudo/article/:url', component: EstudosPageComponent }
+  { path: 'estudo/article/:url', component: EstudosPageComponent },
+  { path: 'banco_de_dados/info/:url', component: BdPageComponent }
 ];
 
 @NgModule({

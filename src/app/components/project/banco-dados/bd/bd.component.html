@@ -1,1 +1,16 @@
-<p>bd works!</p>
+<div 
+    class="dash__row" 
+    *ngFor="let bd of BancoDeDados; let index = index">
+    <div 
+        class="box-dash" 
+        [ngClass]="'box-dash-' + index">
+      <div class="box_txt">
+        <a [routerLink]="['/banco_de_dados/info', bd.url]">
+            <h1 class="txt_title">{{ bd.title }}</h1>
+        </a>
+      </div>
+      <div>
+        <img class="img_box" src="{{ bd.img }}">
+      </div>
+    </div>
+  </div>
