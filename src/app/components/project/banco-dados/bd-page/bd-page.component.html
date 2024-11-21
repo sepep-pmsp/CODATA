@@ -1,1 +1,114 @@
-<p>bd-page works!</p>
+<div class="__bd__row__">
+    <div class="__content__main">
+        <div class="__conten__txt">
+            <div class="title">
+                <h1>Titulo do Banco de Dados</h1>
+            </div>
+            <div class="content-row">
+                <p class="content_paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima
+                    doloribus quia nostrum explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia
+                    delectus laudantium ipsa, assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Eius laboriosam, blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum
+                    optio aliquid eveniet. Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis
+                    culpa voluptates. Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima doloribus quia nostrum
+                    explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia delectus laudantium ipsa,
+                    assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam,
+                    blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum optio aliquid eveniet.
+                    Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis culpa voluptates.
+                    Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima doloribus quia nostrum
+                    explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia delectus laudantium ipsa,
+                    assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam,
+                    blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum optio aliquid eveniet.
+                    Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis culpa voluptates.
+                    Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
+
+                <div class="btn_dowload">
+                    <button class="download">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px"
+                            fill="#ffff">
+                            <path
+                                d="M480-318.09 266.65-531.44l57.13-56 116.61 116.61V-814.7h79.22v343.87l116.61-116.61 57.13 56L480-318.09ZM225.09-145.87q-32.51 0-55.87-23.35-23.35-23.36-23.35-55.87v-143h79.22v143h509.82v-143h79.79v143q0 32.48-23.53 55.85-23.52 23.37-56.26 23.37H225.09Z" />
+                        </svg>
+                    </button>
+                    <p class="txt_btn_dowload">baixar tudo</p>
+                </div>
+            </div>
+        </div>
+        <div class="__conten__img__">
+            <div class="img"></div>
+        </div>
+    </div>
+    <div class="__content__aside">
+        <div class="download_links" *ngFor="let base of base_dados">
+            <div class="{{ base.class_name}}">
+                <div class="base_txt_img">
+                    <div>
+                        <img class="img_base" src="{{ base.svg }}" alt="">
+                    </div>
+                    <div class="base_title_txt">
+                        <h2>{{ base.title }}</h2>
+                        <div>
+                            <p class="base_description">{{ base.desription}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_link_base">
+                    <a href="{{ base.link }}" target="_blank"><button class="btn_base">{{ base.name_btn }}</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="__content_list__">
+        <div class="lista_content">
+            <div class="list_field" *ngFor="let list of content_list">
+                <ul class="list">
+                    <li class="list_content_p">{{ list.txt }}</li>
+                    <li class="list_content_s">{{ list.description }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_field_font">
+            <div *ngFor="let field of content_field_font">
+                <div ngClass="{{ field.class_name_field }}">
+                    <h2 class="txt_field">{{ field.text }}</h2>
+                    <div class="box-img">
+                        <img class="image_box" src="{{ field.img }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="__content_box__">
+        <!-- Lista de Opções -->
+        <div class="box_txt">
+          <ul class="content_box">
+            <li 
+              *ngFor="let option of options; let i = index" 
+              class="list_box"
+              [class.selected]="option === selectedOption" 
+              [class]="activeAnimation[option]"
+              (click)="selectOption(option, i < options.indexOf(selectedOption) ? 'left' : 'right')">
+              {{ option }}
+            </li>
+          </ul>
+        </div>
+      
+        <!-- Conteúdo da Opção Selecionada -->
+        <div class="box" [class]="boxAnimationClass">
+          <ul *ngIf="isArray(processedContent)">
+            <li *ngif="let item of processedContent">{{ item }}</li>
+          </ul>
+          <p *ngIf="!isArray(processedContent)">{{ processedContent }}</p>
+        </div>
+      </div>
+      
+      
+           
+</div>
