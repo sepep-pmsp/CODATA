@@ -12,21 +12,27 @@ export class BdPageComponent {
     {txt_3:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima doloribus quia nostrum explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia delectus laudantium ipsa, assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam, blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum optio aliquid eveniet. Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis culpa voluptates. Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. '}
   ];
 
-  base_dados = [
-    { class_name: 'base_of_dados', title: 'Base de Dados a', description: 'A base desses dados feitos...', link: 'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn: 'abrir link', svg: 'assets/icons/link_icon.svg' },
-    { class_name: 'base_of_dados', title: 'Base de Dados b', description: 'A base desses dados feitos...', link: 'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn: 'abrir link', svg: 'assets/icons/link_icon.svg' },
-    { class_name: 'base_of_dados', title: 'Base de Dados c', description: 'A base desses dados feitos...', link: 'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn: 'abrir link', svg: 'assets/icons/link_icon.svg' },
-  ];
-
-  content_list = [
-    { txt: 'campo', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-    { txt: 'autor', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-  ];
-
-  content_field_font = [
-    { text: 'fonte', class_name_field: 'content_font', img: 'assets/logos/logo-prefeitura.svg' },
-    { text: 'licença', class_name_field: 'content_license', img: 'assets/logos/Creative-Commons-Logo.png' },
-  ];
+  base_dados =[
+    {class_name:'base_of_dados', title:'Base de Dados a', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+    {class_name:'base_of_dados', title:'Base de Dados b', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+    {class_name:'base_of_dados', title:'Base de Dados c', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+    {class_name:'base_of_dados', title:'Base de Dados d', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+    {class_name:'base_of_dados', title:'Base de Dados e', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+    {class_name:'base_of_dados', title:'Base de Dados f', description:'A base desses dados feitos...', link:'https://i.pinimg.com/474x/aa/2c/c6/aa2cc6a8122234a7e04b120f6151ea6e.jpg', name_btn:'abrir link', svg: 'assets/icons/link_icon.svg'},
+   ];
+  
+   content_list=[
+    {txt:'campo', description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',},
+    {txt:'autor', description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',},
+    {txt:'versão', description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',},
+    {txt:'última atualização', description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',},
+    {txt:'data de criação', description:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',}
+   ];
+  
+   content_field_font = [
+    {text:'fonte', class_name_field:'content_font', img:'assets/logos/logo-prefeitura.svg'},
+    {text:'licença', class_name_field:'content_license', img:'assets/logos/Creative-Commons-Logo.png'}
+   ]
 
   options = [
     'identificação',

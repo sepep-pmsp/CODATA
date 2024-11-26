@@ -4,10 +4,12 @@
             <div class="title">
                 <h1>Titulo do Banco de Dados</h1>
             </div>
-            <div class="content-row" *ngFor="let prgf of content_paragraph">
-                <p class="content_paragraph">{{ prgf.txt_1 }}</p>
-                <p>{{ prgf.txt_2 }}</p>
-                <p>{{ prgf.txt_3 }}</p>
+            <div class="content-row">
+                <div *ngFor="let prgf of content_paragraph">
+                    <p class="content_paragraph">{{ prgf.txt_1 }}</p>
+                    <p class="content_paragraph">{{ prgf.txt_2 }}</p>
+                    <p class="content_paragraph">{{ prgf.txt_3 }}</p>
+                </div>
                 <div class="btn_dowload">
                     <button class="download">
                         <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px"
