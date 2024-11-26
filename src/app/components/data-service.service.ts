@@ -315,10 +315,10 @@ export class DataService {
   private bancoDeDados: BancoDeDados[] = [
     {
       id:'02',
-      url:'teste02',
+      url:'banco_de_dados-detail',
       title: 'teste02',
       text: 'teste02',
-      img: 'teste02',
+      img: 'assets/images/info.svg',
       listLink: [
         { title: 'Título', link: 'Lorem ipsum dolor sit' },
       ],
