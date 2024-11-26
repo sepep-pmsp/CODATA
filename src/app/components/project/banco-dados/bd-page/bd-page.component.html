@@ -4,31 +4,10 @@
             <div class="title">
                 <h1>Titulo do Banco de Dados</h1>
             </div>
-            <div class="content-row">
-                <p class="content_paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima
-                    doloribus quia nostrum explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia
-                    delectus laudantium ipsa, assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Eius laboriosam, blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum
-                    optio aliquid eveniet. Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis
-                    culpa voluptates. Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
-
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima doloribus quia nostrum
-                    explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia delectus laudantium ipsa,
-                    assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam,
-                    blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum optio aliquid eveniet.
-                    Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis culpa voluptates.
-                    Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
-
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta minima doloribus quia nostrum
-                    explicabo, itaque aliquid culpa non, corrupti atque unde fugit hic. Quia delectus laudantium ipsa,
-                    assumenda hic possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam,
-                    blanditiis fugit ad delectus, saepe et rem ullam aspernatur id sequi rerum optio aliquid eveniet.
-                    Cum voluptas dolorem dolore expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Voluptas necessitatibus vero reprehenderit delectus tempore ratione, ut officiis culpa voluptates.
-                    Autem architecto neque libero magnam labore, alias iure id. Dolores, ab. </p>
-
+            <div class="content-row" *ngFor="let prgf of content_paragraph">
+                <p class="content_paragraph">{{ prgf.txt_1 }}</p>
+                <p>{{ prgf.txt_2 }}</p>
+                <p>{{ prgf.txt_3 }}</p>
                 <div class="btn_dowload">
                     <button class="download">
                         <svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px"
@@ -55,7 +34,7 @@
                     <div class="base_title_txt">
                         <h2>{{ base.title }}</h2>
                         <div>
-                            <p class="base_description">{{ base.desription}}</p>
+                            <p class="base_description">{{ base.description}}</p>
                         </div>
                     </div>
                 </div>
@@ -86,29 +65,28 @@
         </div>
     </div>
     <div class="__content_box__">
-        <!-- Lista de Opções -->
         <div class="box_txt">
-          <ul class="content_box">
-            <li 
-              *ngFor="let option of options; let i = index" 
-              class="list_box"
-              [class.selected]="option === selectedOption" 
-              [class]="activeAnimation[option]"
-              (click)="selectOption(option, i < options.indexOf(selectedOption) ? 'left' : 'right')">
-              {{ option }}
-            </li>
-          </ul>
+            <ul class="content_box">
+                <li *ngFor="let option of options; let i = index" class="list_box"
+                    [class.selected]="option === selectedOption" [class]="activeAnimation[option]"
+                    (click)="selectOption(option, i < options.indexOf(selectedOption) ? 'left' : 'right')">
+                    {{ option }}
+                </li>
+            </ul>
         </div>
-      
-        <!-- Conteúdo da Opção Selecionada -->
         <div class="box" [class]="boxAnimationClass">
-          <ul *ngIf="isArray(processedContent)">
-            <li *ngif="let item of processedContent">{{ item }}</li>
-          </ul>
-          <p *ngIf="!isArray(processedContent)">{{ processedContent }}</p>
+            <ng-container *ngIf="processedContent as content">
+                <p *ngIf="isString(content)" [innerHTML]="content"></p>
+                <ul *ngIf="isArray(content)">
+                    <li *ngFor="let item of content" [innerHTML]="formatContent(item)"></li>
+                </ul>
+                <div *ngIf="isMixedContent(content)">
+                    <p [innerHTML]="formatContent(content.text)"></p>
+                    <ul>
+                        <li *ngFor="let item of content.list" [innerHTML]="formatContent(item)"></li>
+                    </ul>
+                </div>
+            </ng-container>
         </div>
-      </div>
-      
-      
-           
+    </div>
 </div>
