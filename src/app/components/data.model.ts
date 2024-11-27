@@ -39,6 +39,7 @@ export interface Dashboard  {
     url: string;
     title: string;
     subtitle: string;
+    description: string;
     caption: string ;
     text: string;
     status?: string;
@@ -46,6 +47,7 @@ export interface Dashboard  {
     linkPage?: string;
     linkGitHub?: string;
     dashboard?: string; 
+    svg?: string;
 }
 
 export interface BancoDeDados {
@@ -54,6 +56,8 @@ export interface BancoDeDados {
     title: string;
     text: string;
     img?: string;
+    description: string;
+    status?: string;
     listLink?: { title: string, link: string | string[] }[];
     font: string;
     license: string;
@@ -67,4 +71,5 @@ export interface BancoDeDados {
     quality: string;
     refsystem: string;
     metadata: string;
+    svg?: string;
 }
