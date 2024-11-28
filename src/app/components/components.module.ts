@@ -20,6 +20,7 @@ import { BdComponent } from './project/banco-dados/bd/bd.component';
 import { EstudosPageComponent } from './project/estudo/estudos-page/estudos-page.component';
 import { SistemasComponent } from './project/sistema/sistemas/sistemas.component';
 import { SistemasPageComponent } from './project/sistema/sistemas-page/sistemas-page.component';
+import { TeamPageComponent } from './pages/team-page/team-page.component';
 
 
 
@@ -41,6 +42,7 @@ import { SistemasPageComponent } from './project/sistema/sistemas-page/sistemas-
     BdComponent,
     EstudosPageComponent,
     SistemasPageComponent,
+    TeamPageComponent,
   ],
   imports: [
     CommonModule,
