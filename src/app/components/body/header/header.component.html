@@ -17,7 +17,7 @@
                     <div class="list-toggle-00">
                         <ul class="list-toggle-01">
                             <li class="list-toggle-02">
-                              <a  class="txt">início</a>
+                              <a [routerLink]="''"  class="txt">início</a>
                             </li>
                             <li class="list-toggle-02">
                               <div class="btn-toggle-00">
@@ -41,7 +41,7 @@
                                 <span class="arrow" [ngClass]="{'open': dropdownState.institucional}">▼</span>
                               </button>
                               <ul [ngClass]="{'open': dropdownState.institucional}" class="submenu">
-                                <li><a href="" class="txt-drop">equipe</a></li>
+                                <li><a [routerLink]="'/equipe'" class="txt-drop">equipe</a></li>
                                 <li><a href="" class="txt-drop">atribuições</a></li>
                                 <li><a href="" class="txt-drop">contato</a></li>
                               </ul>
@@ -67,5 +67,4 @@
     </div>
 </div>
 <div *ngIf="isMenuOpen" class="closeMenu">
-  <p>Essa div aparece quando o menu está aberto!</p>
 </div>
