@@ -36,8 +36,8 @@
 
 .img {
     background-color: black;
-    width: 72rem;
-    height: 45rem;
+    width: 60rem;
+    height: 40rem;
     border-radius: 2rem;
 }
 
@@ -63,19 +63,20 @@
 }
 
 .__content__aside {
-    display: flex;
-    flex-wrap: wrap;
     align-content: center;
-    justify-content: center;
-    align-items: center;
     gap: 2rem;
     padding-top: 7rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 }
 
 .base_of_dados {
     background: #cacaca;
-    width: 60rem;
-    height: 17rem;
+    width: 55rem;
+    height: 16rem;
     border-radius: 2rem;
     display: grid;
     justify-content: center;
