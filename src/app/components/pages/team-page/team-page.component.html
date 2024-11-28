@@ -1,1 +1,39 @@
-<p>team-page works!</p>
+<div class="__team__page__row__">
+    <div class="title_subtitle" *ngFor="let team of team_description">
+        <div class="_title_">
+            <h1>{{ team.title }}</h1>
+        </div>
+        <div class="description">
+            <div class="_description_0">
+                <p class="p_description">{{ team.txt_0 }}</p>
+                <p class="p_description">{{ team.txt_1 }}</p>
+            </div>
+            <div class="_description_1">
+                <p class="p_description">{{ team.txt_2 }}</p>
+                <p class="p_description">{{ team.txt_3 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="__space__teams__">
+        <div class="team">
+            <div class="space" *ngFor="let item of image_team" (click)="openPopup(item)">
+                <div class="_img_teams">
+                    <img class="_image_" [src]="item.img" alt="Team Member">
+                </div>
+                <div class="details">
+                    <h2 class="h_complete_name">{{ item.complete_name }}</h2>
+                    <p class="p_position">{{ item.position }}</p>
+                </div>
+            </div>
+            <div class="box_txt">
+                <p class="h_team_2">equipe</p>
+            </div>
+        </div>
+        <div class="overlay" [class.show]="isPopupOpen" (click)="closePopup()"></div>
+        <div class="pop-up_team" [ngClass]="popupAnimationClass">
+            <div class="pop-up-content">
+                <p class="pop-up_p">{{ selectedTeam?.description_position }}</p>
+            </div>
+        </div>
+    </div>
+</div>
