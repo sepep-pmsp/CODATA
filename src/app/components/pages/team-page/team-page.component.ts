@@ -33,7 +33,7 @@ export class TeamPageComponent {
     {
       img:'https://media2.dayoftheshirt.com/7jhot5tsp9wx6oofgougyg3c0ncy/psicopato-pampling.jpg', 
       complete_name:'Mauryas Manzoli', 
-      position:'', 
+      position:'Arquiteto', 
       description_position:' Suspendisse aliquam vulputate turpis, vitae dapibus orci bibendum at. Quisque ut imperdiet velit. Ut molestie ante turpis. Vivamus ligula lectus, malesuada et sapien nec, euismod efficitur nisi. Sed erat felis, efficitur a ante vel, facilisis consequat nisi. Aenean efficitur tincidunt mauris eget rhoncus. Praesent sapien tortor, posuere a dictum sit amet, rhoncus quis mauris. Phasellus consectetur nisl a enim tincidunt volutpat. Praesent vehicula ultricies tortor ut commodo. Donec bibendum dui in felis faucibus, eget pellentesque odio tincidunt. Fusce dictum'
     },
     {
