@@ -3,6 +3,7 @@ import { EstudosService } from '../estudos-service.service';
 import { Estudos } from '../../../data.model';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../../data-service.service';
 
 @Component({
   selector: 'app-estudos-page',
@@ -32,23 +33,18 @@ export class EstudosPageComponent implements OnInit {
         this.estudo = estudo;
       });
     }
+    if (url) {
+      this.estudosdService.buscarPorUrl(url).subscribe((estudo) => {
+        this.estudo = estudo;
+  
+        // Verificar se slides existe antes de atribuir
+        this.slides = estudo?.slides ?? []; // Use array vazio se undefined
+        this.updateVisibleThumbnails();
+      });
+    }
   }
 
-  slides: { image: string; caption: string }[] = [
-    { image: 'https://picsum.photos/id/1041/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    { image: 'https://picsum.photos/id/1043/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    { image: 'https://picsum.photos/id/1044/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    { image: 'https://picsum.photos/id/1045/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    { image: 'https://picsum.photos/id/1049/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    { image: 'https://picsum.photos/id/1041/800/450', 
-      caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac cursus justo. Nunc at faucibus enim. Integer ac malesuada purus, sit amet consectetur sapien. Etiam sed imperdiet elit. Sed sollicitudin rhoncus turpis, ut dapibus nisl aliquet sed. Aliquam ac tristique mauris. Etiam tincidunt neque eros, sed mattis ante tincidunt a. Donec placerat ligula nulla, vel porttitor felis luctus vitae.' },
-    
-  ];
+  slides: { image: string; caption: string }[] = [];
 
   nextSlide() {
     const totalSlides = this.slides.length;
