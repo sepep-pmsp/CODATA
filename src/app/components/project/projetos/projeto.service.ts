@@ -27,21 +27,18 @@ export class ProjetoService {
     );
   }
 
-  // Método para buscar um projeto por URL em todas as categorias
   buscarPorUrl(url: string): Observable<Sistemas | Estudos | Dashboard | BancoDeDados | undefined> {
     return this.getAllProjects().pipe(
       map((projects) => projects.find((project) => project.url === url))
     );
   }
 
-  // Método para buscar um projeto por ID em todas as categorias
   buscarPorId(id: string): Observable<Sistemas | Estudos | Dashboard | BancoDeDados | undefined> {
     return this.getAllProjects().pipe(
       map((projects) => projects.find((project) => project.id === id))
     );
   }
 
-  // Métodos individuais por categoria (opcional, caso você precise de dados separados)
   getSistemas(): Observable<Sistemas[]> {
     return this.dataService.getSistemas();
   }

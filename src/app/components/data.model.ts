@@ -32,6 +32,7 @@ export interface Estudos {
     sections?: { title: string, paragraph: string }[];
     quote?: string;
     minitext?: { minitext_00: string }[];
+    slides?: { image: string; caption: string }[];
 }
 
 export interface Dashboard  {
