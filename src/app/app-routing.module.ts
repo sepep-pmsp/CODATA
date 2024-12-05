@@ -9,6 +9,7 @@ import { DashboardPageComponent } from './components/project/dashboard/dashboard
 import { EstudosPageComponent } from './components/project/estudo/estudos-page/estudos-page.component';
 import { BdPageComponent } from './components/project/banco-dados/bd-page/bd-page.component';
 import { TeamPageComponent } from './components/pages/team-page/team-page.component';
+import { AssignmentsPageComponent } from './components/pages/assignments-page/assignments-page.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'estudo/article/:url', component: EstudosPageComponent },
   { path: 'banco_de_dados/info/:url', component: BdPageComponent },
   { path: 'equipe', component: TeamPageComponent },
+  { path: 'atribuicoes', component: AssignmentsPageComponent },
 ];
 
 @NgModule({
