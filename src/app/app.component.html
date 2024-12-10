@@ -1,3 +1,5 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="app-root" [ngClass]="{ 'contact-page-layout': isContactPage }">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer *ngIf="!isContactPage"></app-footer>
+</div>
