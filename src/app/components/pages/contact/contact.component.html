@@ -1,0 +1,22 @@
+<div class="contact-page-layout">
+    <div class="contact__layout">
+        <div class="icon_animation bounce-in-top">
+            <svg width="20rem" height="20rem" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="33.5" cy="33.5" r="33.5" fill="black" />
+                <path
+                    d="M22.6083 52.8789C25.0346 54.9597 28.2281 56 32.189 56C36.5438 56 39.9343 55.0907 42.3606 53.2725C44.7869 51.4364 46 48.4901 46 44.4335L34.9885 35.6998V44.0139C34.9885 45.0455 34.7915 45.885 34.3975 46.5319C34.0242 47.1789 33.371 47.5024 32.4378 47.5024C31.6083 47.5024 30.9654 47.2401 30.5092 46.7155C30.0737 46.1909 29.856 45.2905 29.856 44.0139V20.9074C29.856 19.8758 30.0323 19.054 30.3848 18.442C30.7373 17.8125 31.4217 17.4978 32.4378 17.4978C33.3087 17.4978 33.9516 17.7426 34.3664 18.2322C34.7811 18.7043 34.9885 19.631 34.9885 21.0123V27.8315L45.8756 19.8583C45.8756 17.4278 45.2949 15.4171 44.1337 13.8259C42.9723 12.2173 41.3756 11.0108 39.3433 10.2065C37.3318 9.40216 35.03 9 32.4378 9C27.6889 9 24.2569 10.189 22.1417 12.567C20.0472 14.9449 19 18.372 19 22.8482V44.1452C19 47.887 20.2028 50.7984 22.6083 52.8789Z"
+                    fill="white" />
+            </svg>
+        </div>
+        <div class="footer_lateral">
+            <div class="list_footer">
+                <div class="content_list" *ngFor="let lista of list_contact">
+                    <ul class="list-contact-footer">
+                        <li><img class="img-contact" [src]="lista.icon" alt="Ícone de contato"/></li>
+                        <li [ngClass]="lista.class_name">{{ lista.txt_name }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
