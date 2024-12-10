@@ -64,17 +64,14 @@ export class ContentPageComponent {
     'DesignDeInterfaces': 5,
     'DesenvolvimentoWeb': 6,
   };
-
   openedPopupSlug: string | null = null;
   openedPopupIndex: null | undefined;
   atividades: any[] = [];
-
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private dataService: DataService
   ) {}
-
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const slug = params['slug'];
@@ -82,17 +79,14 @@ export class ContentPageComponent {
         this.openPopup(slug);
       }
     });
-
     this.dataService.getAtividades().subscribe((atividades) => {
       this.atividades = atividades;
     });
   }
-
   openPopup(slug: string) {
     this.openedPopupSlug = slug;
     this.router.navigate(['/pop-up', slug]);
   }
-
   closePopup() {
     this.openedPopupSlug = null;
     this.router.navigate(['/']);
@@ -100,5 +94,7 @@ export class ContentPageComponent {
   isPopupOpen(slug: string): boolean {
     return this.openedPopupSlug === slug;
   }
-
+  navigateToAssignments(slug: string): void {
+    this.router.navigate(['/atribuicoes'], { queryParams: { slug } });
+  }
 }
