@@ -1,0 +1,112 @@
+.contact-page-layout {
+    padding: 10rem 0rem 0rem 1rem;
+}
+
+.contact__layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.icon_animation {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+}
+
+.footer_lateral {
+    background-color: black;
+    width: 75rem;
+    height: 54rem;
+    margin-left: 2rem;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+}
+
+.content_list {
+    width: 100%;
+    padding: 1rem 1rem 2rem 7rem;
+}
+
+.list_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height: 54rem;
+}
+
+.list-contact-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    gap: 5rem;
+}
+
+.img-contact {
+    width: 4.5rem;
+}
+
+.contact_localization,
+.contact_email,
+.contact_telephone {
+    color: white;
+    font-size: 2.5rem;
+    width: 45rem;
+}
+
+.contact_email{
+    text-decoration: underline;
+}
+
+.icon_animation {
+    animation: bounce-in-top 2s ease infinite;
+}
+
+.bounce-in-top {
+    @keyframes bounce-in-top {
+        0% {
+            transform: translateY(-500px);
+            animation-timing-function: ease-in;
+            opacity: 0;
+        }
+        38% {
+            transform: translateY(0);
+            animation-timing-function: ease-out;
+            opacity: 1;
+        }
+        55% {
+            transform: translateY(-65px);
+            animation-timing-function: ease-in;
+        }
+        72% {
+            transform: translateY(0);
+            animation-timing-function: ease-out;
+        }
+        81% {
+            transform: translateY(-28px);
+            animation-timing-function: ease-in;
+        }
+        90% {
+            transform: translateY(0);
+            animation-timing-function: ease-out;
+        }
+        95% {
+            transform: translateY(-8px);
+            animation-timing-function: ease-in;
+        }
+        100% {
+            transform: translateY(0);
+            animation-timing-function: ease-out;
+        }
+    }
+}

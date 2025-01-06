@@ -3,12 +3,12 @@
   width: 100%;
   background-color: white;
   padding: 1rem 0 1rem 0;
-  z-index: 2;
+  z-index: 1000;
 }
 .header--row.menu-highlight {
   box-shadow: -1px 20px 20px 20px rgba(0, 0, 0, 0.37);
-    border-bottom: 1px solid #878787;
-    transition: box-shadow 0.6s ease, border-bottom 0.6s ease;
+  border-bottom: 1px solid #878787;
+  transition: box-shadow 0.6s ease, border-bottom 0.6s ease;
 }
 
 .btn-toggle-00{
@@ -42,20 +42,23 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
 .header-logo-icon{
   background-size: cover;
   width: 5rem;
   height: 5rem;
 }
+
 .header-logo-codata{
   background-image: url(../../../../assets/logos/logo.svg);
   background-size: cover;
-  width: 249px;
-  height: 4rem;
+  width: 220px;
+  height: 3.5rem;
   z-index: 5;
   right: 7rem;
   position: relative;
 }
+
 .header-logo-prefeitura{
   background-image: url(../../../../assets/logos/logo-prefeitura.svg);
   background-size: cover;
@@ -72,6 +75,10 @@
   align-items: center;
   width: 27rem;
   height: 100%;
+}
+
+.navigatetopage{
+  padding: 0.5rem 0 0.5rem 0;
 }
 
 // menu toggle
@@ -272,7 +279,8 @@
   margin: 5px;
   padding: 0.5rem 0 0 0.5rem;
   color: #5d5d5d;
-  font-size: 20px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .dropdown-btn {
@@ -326,12 +334,12 @@
 }
 
 .submenu.open {
-  max-height: 100px; 
+  max-height: 100%;
   opacity: 1; 
 }
 
 .header-logo-codata {
-  transition: opacity 1s linear, transform 1s linear; 
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 #checkbox:checked ~ .header-logo-codata {

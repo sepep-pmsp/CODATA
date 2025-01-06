@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
       this.selected = filter ? filter : 'all';
     });
     this.router.events.subscribe(() => {
-      this.isMenuOpen = false;
+      this.closeMenu();
     });
   }
 
@@ -64,5 +64,16 @@ export class HeaderComponent implements OnInit {
     this.selected = filter; 
     this.isMenuOpen = false; 
     this.router.navigate([`/projetos/${filter}`]);
+  }
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.isLogoHidden = false;
+    this.isSearchVisible = false;
+    const checkbox = document.getElementById('checkbox') as HTMLInputElement;
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+    this.updateBodyBackground(false);
+    this.updateHeaderHighlight(false);
   }
 }

@@ -1,0 +1,39 @@
+<div class="_assignments_page_row_">
+    <div class="_assignments_page_">
+        <div class="overlay" *ngIf="activePopup" (click)="closePopup()"></div>
+        <div class="_assignments_blocks">
+            <div class="atribucoes">
+                <p>atribuições</p>
+            </div>
+            <div *ngFor="let atividade of atividades" [ngClass]="atividade.class" (click)="openPopup(atividade)">
+                <div class="svgclass">
+                    <svg [attr.viewBox]="atividade.svg.viewBox" [attr.width]="atividade.svg.width"
+                        [attr.height]="atividade.svg.height" xmlns="atividade.svg.xmlns" fill="#FFFFFF">
+                        <path [attr.d]="atividade.svg.path"></path>
+                    </svg>
+                    <div class="material-symbols-txt">
+                        <p class="material-txt">{{ atividade.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_assignments_pop-up" *ngIf="activePopup" @slideIn>
+            <div class="pop-up_open">
+                <div class="icon_and_title">
+                    <div class="icon">
+                        <svg [attr.viewBox]="activePopup.svg.viewBox" [attr.width]="activePopup.svg.width"
+                            [attr.height]="activePopup.svg.height" xmlns="activePopup.svg.xmlns" fill="#FFFFFF">
+                            <path [attr.d]="activePopup.svg.path"></path>
+                        </svg>
+                    </div>
+                    <div class="title">
+                        <h2>{{ activePopup.text }}</h2>
+                    </div>
+                </div>
+                <div class="txt_pop-up">
+                    <p>{{ activePopup.text_complete }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

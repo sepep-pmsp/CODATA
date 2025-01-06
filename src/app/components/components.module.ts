@@ -21,8 +21,8 @@ import { EstudosPageComponent } from './project/estudo/estudos-page/estudos-page
 import { SistemasComponent } from './project/sistema/sistemas/sistemas.component';
 import { SistemasPageComponent } from './project/sistema/sistemas-page/sistemas-page.component';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
-
-
+import { AssignmentsPageComponent } from './pages/assignments-page/assignments-page.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 @NgModule({
@@ -43,6 +43,8 @@ import { TeamPageComponent } from './pages/team-page/team-page.component';
     EstudosPageComponent,
     SistemasPageComponent,
     TeamPageComponent,
+    AssignmentsPageComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,
