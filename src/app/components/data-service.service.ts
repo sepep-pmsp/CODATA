@@ -30,11 +30,6 @@ export class DataService {
   getBancoDeDados(): Observable<BancoDeDados[]> {
     return this.http.get<any>(this.dataUrl).pipe(map((data) => data.bancoDeDados));
   }
-  getOptionsConfig(): Observable<any> {
-    return this.http.get<any>('assets/json/data.json').pipe(
-      map((data) => data.bancoDeDados.find((item: any) => item.optionsConfig)?.optionsConfig)
-    );
-  }
 
   buscarPorId(id: string): Observable<Sistemas | Estudos | Dashboard | BancoDeDados | undefined> {
     return this.http.get<any>(this.dataUrl).pipe(
