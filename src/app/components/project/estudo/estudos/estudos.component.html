@@ -1,21 +1,17 @@
-<div 
-    class="dash__row" 
-    *ngFor="let estudo of estudos; let index = index">
-    <div 
-        class="box-dash" 
-        [ngClass]="'box-dash-' + index">
-      <div class="box_txt">
-        <a [routerLink]="['/estudo/article', estudo.url]">
-            <h1 class="txt_title">{{ estudo.title }}</h1>
-            <h3 class="txt_subtitle_3">{{ estudo.subtitle }}</h3>
-            <p>{{ estudo.dates }}</p>
-        </a>
-      </div>
-      <div class="_description_">
-        <p>{{ estudo.description }}</p>
-      </div>
-      <div>
-        <img class="img_box" src="{{ estudo.svg }}">
-      </div>
+<div class="dash__row" *ngFor="let estudo of estudos; let index = index">
+  <div class="box-dash" [ngClass]="'box-dash-' + index">
+    <div class="box_txt">
+      <a [routerLink]="['/estudo/article', estudo.url]">
+        <h1 class="txt_title">{{ estudo.title }}</h1>
+        <h3 class="txt_subtitle_3">{{ estudo.subtitle }}</h3>
+        <p>{{ estudo.dates }}</p>
+      </a>
+    </div>
+    <div class="_description_">
+      <p>{{ estudo.description }}</p>
+    </div>
+    <div>
+      <img class="img_box" src="{{ estudo.svg }}">
     </div>
   </div>
+</div>

@@ -6,8 +6,11 @@
     align-items: center;
     gap: 2.5rem;
 }
+.card:nth-child(3n + 1) { background-color: #232323; }
+.card:nth-child(3n + 2) { background-color: #CACACA; }
+.card:nth-child(3n + 3) { background-color: #000000; }
+
 .card {
-    background-color: black;
     width: 59rem;
     height: 20rem;
     border-radius: 2rem;
