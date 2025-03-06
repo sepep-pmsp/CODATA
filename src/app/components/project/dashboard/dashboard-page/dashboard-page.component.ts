@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Dashboard } from '../../../data.model';
 import { ActivatedRoute } from '@angular/router';
 import { DashboardService } from '../dashboard-service.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Dashboard } from '../dashboard.model';
 
 @Component({
   selector: 'app-dashboard-page',

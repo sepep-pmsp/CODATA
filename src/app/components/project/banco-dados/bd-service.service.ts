@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { DataService } from '../../data-service.service';
-import { BancoDeDados } from '../../data.model';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BancoDeDados } from './bancoDeDados.model';
 
 
 @Injectable({
@@ -9,18 +9,19 @@ import { Observable } from 'rxjs';
 })
 
 export class BdService {
+  private bdUrl = 'assets/json/bancoDeDados.json';
 
-  constructor(private dataService: DataService) {}
+  constructor(private http: HttpClient) { }
 
   getBancoDeDados(): Observable<BancoDeDados[]> {
-    return this.dataService.getBancoDeDados();
+      return this.http.get<BancoDeDados[]>(this.bdUrl);
   }
 
   buscarPorUrl(url: string): Observable<BancoDeDados | undefined> {
     return new Observable((observer) => {
-      this.dataService.getBancoDeDados().subscribe((bancodedados) => {
-        const bd = bancodedados.find(e => e.url === url);
-        observer.next(bd);
+      this.getBancoDeDados().subscribe((bd: BancoDeDados[]) => {
+        const sistema = bd.find((s: BancoDeDados) => s.url === url);
+        observer.next(sistema);
         observer.complete();
       });
     });

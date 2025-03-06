@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Dashboard } from '../../../data.model';
 import { ActivatedRoute } from '@angular/router';
 import { DashboardService } from '../dashboard-service.service';
+import { Dashboard } from '../dashboard.model';
 
 @Component({
   selector: 'app-deshboards',
@@ -18,7 +18,7 @@ export class DeshboardsComponent implements OnInit{
     ) {}
   
     ngOnInit(): void {
-      this.dashboardsService.getDashboards().subscribe((dashboards) => {
+      this.dashboardsService.getDashboard().subscribe((dashboards) => {
         this.dashboards = dashboards;
       });
   

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "dash00",
+    "url": "SEAD",
+    "title": "SEAD",
+    "description": "Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool",
+    "subtitle": "Fundação Sistema Estadual de Análise de Dados",
+    "caption": "Im never gonna dance again",
+    "text": "Im never gonna dance again...",
+    "img": "assets/images/grafic.svg",
+    "svg": "assets/images/grafic.svg",
+    "linkGitHub": "https://github.com/sepep-pmsp/parceria_sepep_seade",
+    "linkPage": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "dashboard": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "status": "Dashboard"
+  },
+  {
+    "id": "dash01",
+    "url": "SEAD",
+    "title": "SEAD",
+    "description": "Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool",
+    "subtitle": "Fundação Sistema Estadual de Análise de Dados",
+    "caption": "Im never gonna dance again",
+    "text": "Im never gonna dance again...",
+    "img": "assets/images/grafic.svg",
+    "svg": "assets/images/grafic.svg",
+    "linkGitHub": "https://github.com/sepep-pmsp/parceria_sepep_seade",
+    "linkPage": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "dashboard": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "status": "Dashboard"
+  },
+  {
+    "id": "dash02",
+    "url": "SEAD",
+    "title": "SEAD",
+    "description": "Im never gonna dance again Guilty feet have got no rhythm Though its easy to pretend I know youre not a fool",
+    "subtitle": "Fundação Sistema Estadual de Análise de Dados",
+    "caption": "Im never gonna dance again",
+    "text": "Im never gonna dance again...",
+    "img": "assets/images/grafic.svg",
+    "svg": "assets/images/grafic.svg",
+    "linkGitHub": "https://github.com/sepep-pmsp/parceria_sepep_seade",
+    "linkPage": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "dashboard": "https://seade.sepep.prefeitura.sp.gov.br/",
+    "status": "Dashboard"
+  }
+]

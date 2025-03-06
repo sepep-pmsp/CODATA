@@ -7,7 +7,6 @@ import { BdPageComponent } from './project/banco-dados/bd-page/bd-page.component
 import { ProjectComponent } from './project/projetos/projects/project.component';
 import { EstudosComponent } from './project/estudo/estudos/estudos.component';
 import { DeshboardsComponent } from './project/dashboard/deshboards/deshboards.component';
-import { PagesProjectsComponent } from './project/projetos/pages-projects/pages-projects.component';
 import { ContentPageComponent } from './body/content-page/content-page.component';
 import { FooterComponent } from './body/footer/footer.component';
 import { ProjectsComponent } from './project/project';
@@ -32,7 +31,6 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomeComponent, 
     EstudosComponent, 
     DeshboardsComponent, 
-    PagesProjectsComponent, 
     SistemasComponent, 
     BdPageComponent, 
     ContentPageComponent, 

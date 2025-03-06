@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Estudos } from '../../../data.model';
 import { ActivatedRoute } from '@angular/router';
 import { EstudosService } from '../estudos-service.service';
+import { Estudos } from '../estudos.model';
 
 
 @Component({

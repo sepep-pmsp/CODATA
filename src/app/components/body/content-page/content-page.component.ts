@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from '../../data-service.service';
+import { AssignmentsService } from '../../pages/assignments-page/service/assignments.service';
 
 @Component({
   selector: 'app-content-page',
@@ -70,7 +70,7 @@ export class ContentPageComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private dataService: DataService
+    private assignmentsService: AssignmentsService
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -79,7 +79,7 @@ export class ContentPageComponent {
         this.openPopup(slug);
       }
     });
-    this.dataService.getAtividades().subscribe((atividades) => {
+    this.assignmentsService.getAtividades().subscribe((atividades) => {
       this.atividades = atividades;
     });
   }

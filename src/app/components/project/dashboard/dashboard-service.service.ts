@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import { DataService } from '../../data-service.service';
-import { Dashboard } from '../../data.model';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Dashboard } from './dashboard.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-  
-  constructor(private dataService: DataService) {}
+  private dashboardUrl = 'assets/json/dashboard.json';
 
-  getDashboards(): Observable<Dashboard[]> {
-    return this.dataService.getDashboard();
+  constructor(private http: HttpClient) { }
+
+  getDashboard(): Observable<Dashboard[]> {
+    return this.http.get<Dashboard[]>(this.dashboardUrl);
   }
 
   buscarPorUrl(url: string): Observable<Dashboard | undefined> {
     return new Observable((observer) => {
-      this.dataService.getDashboard().subscribe((dashboard) => {
-        const dash = dashboard.find(e => e.url === url);
-        observer.next(dash);
+      this.getDashboard().subscribe((dashboard: Dashboard[]) => {
+        const sistema = dashboard.find((s: Dashboard) => s.url === url);
+        observer.next(sistema);
         observer.complete();
       });
     });

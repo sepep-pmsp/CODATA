@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BancoDeDados, Dashboard, Estudos, Sistemas } from '../../../data.model';
 import { ProjetoService } from '../projeto.service';
+import { Sistemas } from '../../sistema/sistemas.model';
+import { Estudos } from '../../estudo/estudos.model';
+import { Dashboard } from '../../dashboard/dashboard.model';
+import { BancoDeDados } from '../../banco-dados/bancoDeDados.model';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from '../../data-service.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { AssignmentsService } from './service/assignments.service';
 
 @Component({
   selector: 'app-assignments-page',
@@ -25,10 +25,10 @@ export class AssignmentsPageComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private dataService: DataService
+    private assignmentsService: AssignmentsService
   ) {}
   ngOnInit(): void {
-    this.dataService.getAtividades().subscribe((data) => {
+    this.assignmentsService.getAtividades().subscribe((data) => {
       this.atividades = data;
       const slug = this.route.snapshot.queryParamMap.get('slug');
       if (slug) {

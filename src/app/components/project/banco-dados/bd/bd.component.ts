@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { BancoDeDados } from '../../../data.model';
 import { BdService } from '../bd-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { BancoDeDados } from '../bancoDeDados.model';
 
 @Component({
   selector: 'app-bd',

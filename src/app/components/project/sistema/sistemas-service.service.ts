@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { DataService } from '../../data-service.service';
-import { Sistemas } from '../../data.model';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Sistemas } from './sistemas.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SistemasService {
+ private sistemasUrl = 'assets/json/sistemas.json';
   
-  constructor(private dataService: DataService) {}
+  constructor(private http: HttpClient) {}
 
   getSistemas(): Observable<Sistemas[]> {
-    return this.dataService.getSistemas();
+    return this.http.get<Sistemas[]>(this.sistemasUrl);
   }
+  
 
   buscarPorUrl(url: string): Observable<Sistemas | undefined> {
     return new Observable((observer) => {
-      this.dataService.getSistemas().subscribe((sistemas) => {
-        const sistema = sistemas.find(s => s.url === url);
+      this.getSistemas().subscribe((sistemas: Sistemas[]) => {
+        const sistema = sistemas.find((s: Sistemas) => s.url === url);
         observer.next(sistema);
         observer.complete();
       });

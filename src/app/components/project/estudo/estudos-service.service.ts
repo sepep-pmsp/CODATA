@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { DataService } from '../../data-service.service';
-import { Estudos } from '../../data.model';
+import { map, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Estudos } from './estudos.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class EstudosService {
-  
-  constructor(private dataService: DataService) {}
+  private estudossUrl = 'assets/json/estudos.json';
+
+  constructor(private http: HttpClient) { }
 
   getEstudos(): Observable<Estudos[]> {
-    return this.dataService.getEstudos();
+    return this.http.get<Estudos[]>(this.estudossUrl);
   }
-
+  
   buscarPorUrl(url: string): Observable<Estudos | undefined> {
     return new Observable((observer) => {
-      this.dataService.getEstudos().subscribe((estudos) => {
-        const estudo = estudos.find(e => e.url === url);
-        observer.next(estudo);
+      this.getEstudos().subscribe((estudos: Estudos[]) => {
+        const sistema = estudos.find((s: Estudos) => s.url === url);
+        observer.next(sistema);
         observer.complete();
       });
     });

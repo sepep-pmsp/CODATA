@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EstudosService } from '../estudos-service.service';
-import { Estudos } from '../../../data.model';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../../../data-service.service';
+import { Estudos } from '../estudos.model';
 
 @Component({
   selector: 'app-estudos-page',

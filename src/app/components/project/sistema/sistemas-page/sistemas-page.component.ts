@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Sistemas } from '../../../data.model';
 import { ActivatedRoute } from '@angular/router';
 import { SistemasService } from '../sistemas-service.service';
+import { Sistemas } from '../sistemas.model';
 
 @Component({
   selector: 'app-sistemas-page',

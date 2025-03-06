@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../data-service.service';
+import { BdService } from '../bd-service.service';
 
 @Component({
   selector: 'app-bd-page',
@@ -14,10 +14,10 @@ export class BdPageComponent implements OnInit {
   activeAnimation: { [key: string]: string } = {};
   boxAnimationClass: string = '';
 
-  constructor(private dataService: DataService) { }
+  constructor(private bdService: BdService) { }
 
   ngOnInit(): void {
-    this.dataService.getBancoDeDados().subscribe((bancoDeDados) => {
+    this.bdService.getBancoDeDados().subscribe((bancoDeDados) => {
       this.selectedBancoDeDados = bancoDeDados[0];
       const optionsConfig = this.selectedBancoDeDados?.optionsConfig;
       if (optionsConfig) {
