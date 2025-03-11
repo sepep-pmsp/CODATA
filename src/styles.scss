@@ -6,22 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,700;1,700&display=swap');
 
 
-// Define the theme object.
-$test-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
-  )
-));
-
-:root {
-  @include mat.all-component-themes($test-theme);
-}
-
 *, *:after,*:before {
     margin: 0;
     padding: 0;
