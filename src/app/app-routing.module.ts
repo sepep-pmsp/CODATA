@@ -11,6 +11,8 @@ import { BdPageComponent } from './components/project/banco-dados/bd-page/bd-pag
 import { TeamPageComponent } from './components/pages/team-page/team-page.component';
 import { AssignmentsPageComponent } from './components/pages/assignments-page/assignments-page.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
+import { ApiComponent } from './components/project/apis/api/api.component';
+import { ApiPageComponent } from './components/project/apis/api-page/api-page.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'equipe', component: TeamPageComponent },
   { path: 'atribuicoes', component: AssignmentsPageComponent },
   { path: 'contato', component: ContactComponent },
+  { path: 'API', component: ApiComponent },
+  { path: 'API/:url', component: ApiPageComponent },
 ];
 
 @NgModule({

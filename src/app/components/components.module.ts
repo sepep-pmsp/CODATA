@@ -22,6 +22,8 @@ import { SistemasPageComponent } from './project/sistema/sistemas-page/sistemas-
 import { TeamPageComponent } from './pages/team-page/team-page.component';
 import { AssignmentsPageComponent } from './pages/assignments-page/assignments-page.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ApiComponent } from './project/apis/api/api.component';
+import { ApiPageComponent } from './project/apis/api-page/api-page.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     TeamPageComponent,
     AssignmentsPageComponent,
     ContactComponent,
+    ApiComponent,
+    ApiPageComponent,
   ],
   imports: [
     CommonModule,

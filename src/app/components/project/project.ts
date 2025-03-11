@@ -20,6 +20,11 @@ export class ProjectsComponent implements OnInit{
     },
     {
       className:'form-proj-option',
+      value: 'API',
+      txtName :'API',
+    },
+    {
+      className:'form-proj-option',
       value: 'dashboard',
       txtName :'dashboard',
     },
