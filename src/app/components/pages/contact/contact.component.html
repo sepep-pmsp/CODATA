@@ -10,7 +10,7 @@
         </div>
         <div class="footer_lateral">
             <div class="list_footer">
-                <div class="content_list" *ngFor="let lista of list_contact">
+                <div class="content_list" *ngFor="let lista of contact">
                     <ul class="list-contact-footer">
                         <li><img class="img-contact" [src]="lista.icon" alt="Ícone de contato"/></li>
                         <li [ngClass]="lista.class_name">{{ lista.txt_name }}</li>

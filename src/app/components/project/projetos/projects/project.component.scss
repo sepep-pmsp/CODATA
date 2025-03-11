@@ -5,8 +5,11 @@
 	padding: 1rem;
 	margin: 1rem;
 }
+.card:nth-child(3n + 1) { background-color: #232323; }
+.card:nth-child(3n + 2) { background-color: #CACACA; }
+.card:nth-child(3n + 3) { background-color: #000000; }
+
 .card {
-	background-color: black;
 	width: 26rem;
 	height: 23rem;
 	border-radius: 2rem;
@@ -83,9 +86,7 @@
 		}
 	}
 
-	&:hover {
-		background-color: transparent;
-	}
+	
 }
 
 .pagination {

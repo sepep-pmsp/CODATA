@@ -1,6 +1,9 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from '../../pages/assignments-page/service/assignments.service';
+import { Destaques } from './service/destaques.model';
+import { Partners } from './service/partners.model';
+import { ContentService } from './service/content.service';
 
 @Component({
   selector: 'app-content-page',
@@ -8,46 +11,86 @@ import { AssignmentsService } from '../../pages/assignments-page/service/assignm
   styleUrl: './content-page.component.scss'
 })
 export class ContentPageComponent {
-  bigContents = [
-    {
-      buttonNews:'notícia',
-      buttonProjects:'projeto',
-      title: 'O Observatório de Indicadores da Cidade de São Paulo (ObservaSampa) é uma política pública de Estado de dados',
-      date: new Date(2024, 10, 23)
-    }
-  ];
-
-  smallContents = [
-    {
-      buttonLabel: 'projeto',
-      title: 'quisquam est qui dolorem ipsum quia dolor sit amet neque porro',
-      date: new Date(2024, 0, 2)
-    },
-    {
-      buttonLabel: 'projeto',
-      title: 'artigo discorre sobre...',
-      date: new Date(2024, 0, 2)
-    },
-    {
-      buttonLabel: 'projeto',
-      title: 'desenvolvimento Web .....',
-      date: new Date(2024, 0, 2)
-    }
-  ];
+  openedPopupSlug: string | null = null;
+  openedPopupIndex: null | undefined;
+  atividades: any[] = [];
+  contents: Destaques[] = [];
+  partners: Partners [] = [];
+  smallContents: any[] = [];
+  bigContents: any[] = [];
 
 
-  partners = [
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner0' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner1' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner2' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner3' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner4' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner5' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner6' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner7' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner8' },
-    { imgSrc: '../../../../assets/logos/logo-prefeitura.svg', altText: 'partner9' },
-  ];
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private contentService: ContentService,
+    private assignmentsService: AssignmentsService
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const slug = params['slug'];
+      if (slug && this.popupMapping[slug] !== undefined) {
+        this.openPopup(slug);
+      }
+    });
+
+    this.assignmentsService.getAtividades().subscribe((atividades) => {
+      this.atividades = atividades;
+    });
+
+    this.contentService.getContents().subscribe((data) => {
+      this.bigContents = data.bigContents;
+      this.smallContents = data.smallContents;
+    });
+
+    this.contentService.getPartners().subscribe((partners) => {
+      this.partners = partners;
+    });
+  }
+
+  openPopup(slug: string) {
+    this.openedPopupSlug = slug;
+    this.router.navigate(['/pop-up', slug]);
+  
+    setTimeout(() => {
+      this.scrollToPopup();
+    }, 0);
+  }  
+  
+  closePopup() {
+    const scrollY = window.scrollY;
+    this.openedPopupSlug = null;
+  
+    this.router.navigate(['/']).then(() => {
+      window.scrollTo(0, scrollY); 
+    });
+  }      
+  
+  scrollToPopup() {
+    setTimeout(() => {
+      const popup = document.querySelector('.pop-up');
+      if (popup) {
+        const popupPosition = popup.getBoundingClientRect().top + window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        window.scrollTo({
+          top: popupPosition - windowHeight / 2 + popup.clientHeight / 2,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  }
+
+  isPopupOpen(slug: string): boolean {
+    return this.openedPopupSlug === slug;
+  }
+
+
+  navigateToAssignments(slug: string): void {
+    this.router.navigate(['/atribuicoes'], { queryParams: { slug } });
+  }
+
 
   repositoryData = [
     { class: 'repositories', number: 5, text: 'repositorios' },
@@ -64,37 +107,4 @@ export class ContentPageComponent {
     'DesignDeInterfaces': 5,
     'DesenvolvimentoWeb': 6,
   };
-  openedPopupSlug: string | null = null;
-  openedPopupIndex: null | undefined;
-  atividades: any[] = [];
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private assignmentsService: AssignmentsService
-  ) {}
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const slug = params['slug'];
-      if (slug && this.popupMapping[slug] !== undefined) {
-        this.openPopup(slug);
-      }
-    });
-    this.assignmentsService.getAtividades().subscribe((atividades) => {
-      this.atividades = atividades;
-    });
-  }
-  openPopup(slug: string) {
-    this.openedPopupSlug = slug;
-    this.router.navigate(['/pop-up', slug]);
-  }
-  closePopup() {
-    this.openedPopupSlug = null;
-    this.router.navigate(['/']);
-  }
-  isPopupOpen(slug: string): boolean {
-    return this.openedPopupSlug === slug;
-  }
-  navigateToAssignments(slug: string): void {
-    this.router.navigate(['/atribuicoes'], { queryParams: { slug } });
-  }
 }

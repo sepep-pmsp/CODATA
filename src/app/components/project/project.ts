@@ -20,16 +20,6 @@ export class ProjectsComponent implements OnInit{
     },
     {
       className:'form-proj-option',
-      value: 'banco-de-dados',
-      txtName :' banco de dados',
-    },
-    {
-      className:'form-proj-option',
-      value: 'estudos',
-      txtName :'estudos',
-    },
-    {
-      className:'form-proj-option',
       value: 'dashboard',
       txtName :'dashboard',
     },

@@ -1,25 +1,22 @@
 <div class="projects-container">
-    <div class="projects-grid">
-      <div *ngFor="let projeto of displayedProjects" class="card">
-        <div class="card__thumb">
-          <img [src]="projeto.svg || 'assets/icons/default_image.svg'" alt="{{ projeto.title }}" class="card__image" />
-        </div>
-        <div class="card__caption">
-          <h3 class="card__title">
-          </h3>
-          <p class="card__description">{{ projeto.description }}</p>
-          <p class="card__status">{{ projeto.status }}</p>
-        </div>
+  <div class="projects-grid">
+    <div *ngFor="let projeto of displayedProjects" class="card">
+      <div class="card__thumb">
+        <img [src]="projeto.svg || 'assets/icons/default_image.svg'" alt="{{ projeto.title }}" class="card__image" />
+      </div>
+      <div class="card__caption">
+        <h3 class="card__title">
+          <a [routerLink]="getProjectLink(projeto)">{{ projeto.title }}</a>
+        </h3>
+        <p class="card__description">{{ projeto.description }}</p>
+        <p class="card__status">{{ projeto.status }}</p>
       </div>
     </div>
-    <div class="pagination">
-        <button 
-          class="btn_pagination"
-          *ngFor="let page of [].constructor(totalPages); let i = index" 
-          [class.active]="currentPage === i + 1" 
-          (click)="goToPage(i + 1)">
-            {{ i + 1 }}
-        </button>
-      </div>
   </div>
-  
+  <div class="pagination">
+    <button class="btn_pagination" *ngFor="let page of [].constructor(totalPages); let i = index"
+      [class.active]="currentPage === i + 1" (click)="goToPage(i + 1)">
+      {{ i + 1 }}
+    </button>
+  </div>
+</div>

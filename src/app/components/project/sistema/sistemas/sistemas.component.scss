@@ -6,8 +6,11 @@
     align-items: center;
     gap: 2.5rem;
 }
+.card:nth-child(3n + 1) { background-color: #232323; }
+.card:nth-child(3n + 2) { background-color: #CACACA; }
+.card:nth-child(3n + 3) { background-color: #000000; }
+
 .card {
-    background-color: black;
     width: 59rem;
     height: 20rem;
     border-radius: 2rem;
@@ -87,4 +90,29 @@
     &:hover{
         background-color: transparent;
     }
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	gap: 2rem;
+}
+
+.btn_pagination {
+	border: none;
+	font-size: 2.5rem;
+	color: transparent;
+	width: 8rem;
+	height: 0.5rem;
+	background: rgba(0, 0, 0, 0.3); // Cinza escuro
+	cursor: pointer;
+	transition: background 0.3s ease;
+
+	// Estilo do botão ativo
+	&.active {
+		background: black; // Preto
+	}
 }
