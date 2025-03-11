@@ -1,0 +1,72 @@
+<div class="__api_page__">
+    <div class="_title_list_template_">
+        <div class="__title_template__">
+            <div class="_title_">
+                <h2>{{ selectedApi?.titulo }}</h2>
+            </div>
+            <div class="_text_">
+                <div>
+                    <p>{{ selectedApi?.texto }}</p>
+                </div>
+                <div>
+                    <p>{{ selectedApi?.texto2 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="__list_template__">
+            <div class="_list_">
+                <ul class="list" *ngFor="let list of selectedApi?.listContents">
+                    <li class="item-list">
+                        <div class="item">
+                            <div class="item-title">
+                                <h3>{{ list.title }}</h3>
+                                <p>{{ list.content }}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="_template_grid_">
+        <div class="urls_links_btn" *ngFor="let url of selectedApi?.urlProducts">
+            <div class="btn-url">
+                <div class="url">
+                    <h3 class="url-title">{{ url?.title }}</h3>
+                </div>
+                <div class="links">
+                    <div class="_link_">
+                        <a class="_link_" [href]="url.url" target="_blank">{{ url.url }}</a>
+                    </div>
+                    <div class="icon">
+                        <button *ngIf="url.title === 'URLs de Produção e Sandbox'" class="btn_urls_template"
+                            (click)="copyToClipboard(url.url)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#000000">
+                                <path
+                                    d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                            </svg>
+                        </button>
+                        <div *ngIf="tooltipVisible" class="tooltip">Copiado</div>
+                        <button *ngIf="url.title === 'Manual da API'" class="btn_urls_template"
+                            (click)="downloadManual()">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#000000">
+                                <path
+                                    d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_link_github_" *ngIf="selectedApi?.github">
+            <a [href]="selectedApi.github" target="_blank" class="github-btn">
+                <i class="fa-brands fa-github btn-github"></i>
+            </a>
+        </div>
+    </div>
+    <div class="_features_">
+        
+    </div>
+</div>
