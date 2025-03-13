@@ -67,6 +67,35 @@
         </div>
     </div>
     <div class="_features_">
-        
+        <div class="title-2">
+            <h2>Principais Funcionalidades da API</h2>
+        </div>
+        <div>
+            <div class="accordion-container">
+                <div class="accordion-item" *ngFor="let func of selectedApi?.functions">
+                    <div class="accordion-header" (click)="toggleAccordion(func)">
+                        <div class="method">{{ func.metodo }}</div>
+                        <div class="endpoint">{{ func.endpoint }}</div>
+                        <div class="div-definicao definicao"><p class="definicao">{{ func.definicao }}</p></div>
+                    </div>
+                    <div class="accordion-content" [class.open]="func.open">
+                        <div class="header">
+                            <div class="linha"></div>
+                        <h3 class="title-3">{{ func.parametros }}</h3>
+                        </div>
+                        <div class="body">
+                            <div class="parametros_entrada">
+                                <h4 class="title-4">{{ func.parametros_entrada }}</h4>
+                                <p class="text-func">{{ func.entrada }}</p>
+                            </div>
+                            <div class="parametros_saida">
+                                <h4 class="title-4">{{ func.parametros_saida }}</h4>
+                                <p class="text-func">{{ func.saida }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

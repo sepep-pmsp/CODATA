@@ -26,14 +26,10 @@ export class ApiPageComponent implements OnInit{
   
       if (apis && apis.length > 0) {
         this.selectedApi = apis[0];
-        console.log('selectedApi:', this.selectedApi);
   
-        if (!this.selectedApi.urls || this.selectedApi.urls.length === 0) {
-        }
-  
-        const optionsConfig = this.selectedApi?.optionsConfig;
-        if (optionsConfig) {
-          this.options = optionsConfig.options;
+        // Adiciona a propriedade "open" para cada função do array
+        if (this.selectedApi.functions) {
+          this.selectedApi.functions.forEach((func: any) => func.open = false);
         }
       } else {
         console.warn('Nenhum dado recebido da API.');
@@ -43,6 +39,7 @@ export class ApiPageComponent implements OnInit{
       console.error('Erro ao buscar API:', error);
     });
   }
+  
 
   copyToClipboard(url: string): void {
     navigator.clipboard.writeText(url).then(() => {
@@ -62,4 +59,8 @@ export class ApiPageComponent implements OnInit{
     link.click(); 
     document.body.removeChild(link);
   }
+
+  toggleAccordion(func: any): void {
+    func.open = !func.open;
+  }  
 }

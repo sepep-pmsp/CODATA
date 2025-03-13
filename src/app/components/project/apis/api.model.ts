@@ -10,5 +10,5 @@ export interface Api{
     svg?: string;
     listContents?: { title: string, content: string | string[] }[];
     urlProducts?:{ url: string, title: string | string}[];
-    functions?:{metodo: string, endpoint: string, definicao: string, parametros: string, parametros_entrada: string, entrada: string, parametros_saida: string, saida: string | string}[];
+    functions?:{id:number, metodo: string, endpoint: string, definicao: string, parametros: string, parametros_entrada: string, entrada: string, parametros_saida: string, saida: string | string}[];
 }

@@ -43,13 +43,14 @@
     ],
     "functions":[
         {
-            "metodo": "GET",
+            "id": 1,
+            "metodo": "get",
             "endpoint": "/api/v1/indicadores",
             "definicao": "Retorna todos os indicadores disponíveis.",
-            "parametros": "parametros",
-            "parametros_entrada": "parametros_entrada",
+            "parametros": "parâmetros",
+            "parametros_entrada": "parametros entrada",
             "entrada":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
-            "parametros_saida": "parametros_saida",
+            "parametros_saida": "parametros saida",
             "saida":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc."
         }
     ]
