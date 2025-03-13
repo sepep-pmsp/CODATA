@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "url": "api-observasampa",
+    "status": "API",
+    "titulo": "API ObservaSampa",
+    "github":"https://github.com/sepep-pmsp/api_observasampa",
+    "description": "API para o Portal ObservaSampa desenvolvida com o framework Fast API.",
+    "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+    "texto2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+    "img": "https://alasco.tech/_astro/fastapi-logo.CrXoa3Er_Ztc4GC.webp",
+    "listContents": [
+      {
+        "title": "Versão:",
+        "content": "Lorem ipsum dolor sit"
+      },
+      {
+        "title": "Por:",
+        "content": "Lorem ipsum dolor sit"
+      },
+      {
+        "title": "Atualizado:",
+        "content": "Lorem ipsum dolor sit"
+      },
+      {
+        "title": "Equipe:",
+        "content": ["Membro 1\n"]
+      },
+      {
+        "title": "Status:",
+        "content": "Lorem ipsum dolor sit"
+      }
+    ],
+    "urlProducts": [
+      {
+        "url": "https://www.google.com",
+        "title": "URLs de Produção e Sandbox"
+      },
+      {
+        "url": "https://www.google.com",
+        "title": "Manual da API"
+      }
+    ],
+    "functions":[
+        {
+            "id": 1,
+            "metodo": "get",
+            "endpoint": "/api/v1/indicadores",
+            "definicao": "Retorna todos os indicadores disponíveis.",
+            "parametros": "parâmetros",
+            "parametros_entrada": "parametros entrada",
+            "entrada":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc.",
+            "parametros_saida": "parametros saida",
+            "saida":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl nec nunc."
+        }
+    ]
+  }
+]
