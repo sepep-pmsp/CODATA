@@ -1,0 +1,20 @@
+.btn-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-contente {
+    border-radius: 5rem;
+    width: 23rem;
+    height: 9rem;
+    font-size: 3.5rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    &:hover {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-white);
+        color: var(--color-black);
+    }
+}
