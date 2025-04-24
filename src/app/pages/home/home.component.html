@@ -1,0 +1,11 @@
+<div class="homepage">
+    <div class="home-content">
+        <app-about-section></app-about-section>
+        <app-destaques-section [bigContents]="bigContents" [smallContents]="smallContents"></app-destaques-section>
+        <app-atividade-popup [atividades]="atividades" [openedPopupSlug]="openedPopupSlug"
+            (openPopup)="openPopup($event)" (closePopup)="closePopup()">
+        </app-atividade-popup>
+        <app-home-buttons></app-home-buttons>
+        <app-parceiros [partners]="partners"></app-parceiros>
+    </div>
+</div>

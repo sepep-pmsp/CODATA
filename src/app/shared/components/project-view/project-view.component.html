@@ -1,0 +1,20 @@
+<div class="all-projects-area" [ngClass]="{'blurred-background': isDropdownOpen}">
+    <ng-container [ngSwitch]="selected">
+        <app-project-grid 
+        *ngSwitchCase="'projetos'" 
+        [projetos]="displayedProjects"></app-project-grid>
+        <app-api-card 
+        *ngSwitchCase="'API'"></app-api-card>
+        <app-dashboard-card *ngSwitchCase="'Dashboard'"></app-dashboard-card>
+        <app-sistemas-card *ngSwitchCase="'Sistemas'"></app-sistemas-card>
+        <app-site-card 
+        *ngSwitchCase="'Sites'"></app-site-card>
+    </ng-container>
+
+    <app-pagination 
+    *ngIf="totalPages > 1" 
+    [currentPage]="currentPage" 
+    [totalPages]="totalPages"
+    (pageChange)="goToPage($event)">
+    </app-pagination>
+</div>

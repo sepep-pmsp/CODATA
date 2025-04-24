@@ -1,0 +1,124 @@
+.system__cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+.card:nth-child(3n + 1) {
+    background-color: #232323;
+}
+.card:nth-child(3n + 2) {
+    background-color: #cacaca;
+}
+.card:nth-child(3n + 3) {
+    background-color: #000000;
+}
+
+.card {
+    width: 59rem;
+    height: 20rem;
+    border-radius: 2rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+
+    .card__thumb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 95%;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            .card__image {
+                opacity: 0;
+            }
+
+            + .card__caption {
+                opacity: 1;
+                z-index: 1;
+            }
+        }
+    }
+
+    .card__image {
+        width: 20rem;
+        transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        z-index: 0;
+        border-radius: 2rem;
+    }
+
+    .card__caption {
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        padding: 1rem;
+        transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        background-color: rgb(253, 253, 253);
+        &:hover {
+            opacity: 2;
+            color: var(--color-black);
+        }
+
+        .card__title {
+            font-size: 3rem;
+            & a {
+                color: #525252;
+            }
+        }
+
+        .card__description {
+            font-size: 1.5rem;
+            color: #525252;
+            font-style: italic;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.btn_pagination {
+    border: none;
+    font-size: 2.5rem;
+    color: transparent;
+    width: 8rem;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.3); // Cinza escuro
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    // Estilo do botão ativo
+    &.active {
+        background: var(--color-black); // Preto
+    }
+}

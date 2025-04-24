@@ -1,0 +1,53 @@
+<p>sistemas-page works!</p>
+<div class="page_system--row">
+    <div class="page_system">
+        <div class="page_system-contents">
+            <div class="__page__">
+                <div class="system_contan">
+                    <div class="page_system-title">
+                        <h1>{{ sistema?.title }}</h1>
+                    </div>
+                    <div class="system_content">
+                        <div class="syste" *ngFor="let section of sistema?.sections">
+                            <h2 class="system_title">{{ section.title }}</h2>
+                            <p class="sytem_paragraph">{{ section.paragraph }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="page_system-list">
+                    <div class="system-list">
+                        <ul class="list-contents">
+                            <li class="list_system" *ngFor="let item of sistema?.listContents">
+                                <h3 class="item_title">{{ item.title }}</h3>
+                                <p class="item_prgf">{{ item.content }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="system-img_btn" *ngIf="sistema?.additionalImages?.length">
+                <div class="system_img">
+                    <img 
+                    class="fade-image" 
+                    [src]="sistema?.additionalImages?.[imagemAtual]" 
+                    alt="Imagem do sistema"
+                    [class.fade-in]="fade" 
+                    (load)="onImageLoad()" />
+                </div>
+                <div class="carousel-controls">
+                    <button 
+                    (click)="voltarImagem()" 
+                    [disabled]="imagemAtual === 0">
+                    <i class="fa-solid fa-play fa-paly-control"></i>
+                    </button>
+                    <button 
+                    (click)="avancarImagem()"
+                    [disabled]="imagemAtual === (sistema?.additionalImages?.length ?? 0) - 1">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

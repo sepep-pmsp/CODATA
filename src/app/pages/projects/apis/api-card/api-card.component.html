@@ -1,0 +1,23 @@
+<div class="system__cards">
+    <div class="card" *ngFor="let api of displayedProjects">
+        <div class="card__thumb">
+            <img [src]="api.img" alt="Image" class="card__image">
+        </div>
+        <div class="card__caption">
+            <h2 class="card__title">
+                <a [routerLink]="['/projetos', 'apis', api.url]">{{ api.titulo }}</a>
+
+            </h2>
+            <div class="card__txt">
+                <p class="card__description">{{ api.description }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="pagination" *ngIf="totalPages > 1">
+        <button class="btn_pagination" 
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+            [class.active]="currentPage === i + 1" (click)="goToPage(i + 1)">
+            {{ i + 1 }}
+        </button>
+    </div>
+</div>

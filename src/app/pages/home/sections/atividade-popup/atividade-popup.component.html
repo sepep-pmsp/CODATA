@@ -1,0 +1,29 @@
+<div *ngIf="openedPopupSlug !== null" class="closePopup" (click)="closePopupFn()"></div>
+<div class="activity-area">
+    <div class="txt-activity">
+        <h2 class="title-activity">atividades</h2>
+    </div>
+    <div class="box-activity00">
+        <div *ngFor="let atividade of atividades" class="box-activity" (click)="handleClick(atividade.slug)">
+            <div [ngClass]="atividade.class">
+                <div class="svgclass">
+                    <svg [attr.viewBox]="atividade.svg.viewBox" [attr.width]="atividade.svg.width"
+                        [attr.height]="atividade.svg.height" xmlns="atividade.xmlns" fill="#FFFFFF">
+                        <path [attr.d]="atividade.svg.path"></path>
+                    </svg>
+                </div>
+                <div class="material-symbols-txt">
+                    <p class="material-txt">{{ atividade.text }}</p>
+                </div>
+            </div>
+            <div class="pop-up" *ngIf="isPopupOpen(atividade.slug)" (click)="$event.stopPropagation()">
+                <div class="txt-PopUp">
+                    <p class="txt-p-popup">{{ atividade.description }}</p>
+                    <div class="btn-popup">
+                        <button class="button" (click)="navigateToAssignments(atividade.slug); $event.stopPropagation()">saiba mais</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+.partners-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex-direction: column;
+    width: 100%;
+}
+
+.partners-area-img {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.partners-txt {
+    font-size: 4rem;
+}
+
+.partner-img {
+    width: 18rem;
+    height: 12rem;
+}

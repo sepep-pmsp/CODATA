@@ -1,0 +1,29 @@
+<div class="projects-all">
+    <div class="forms-projects">
+        <app-project-filter [formSelection]="form_selection" [selected]="selected" (onChange)="navigateToPage($event)"
+            (onOpen)="onOpen()" (onClose)="onClose()"></app-project-filter>
+    </div>
+
+    <div 
+    class="all-projects-area" 
+    [ngClass]="{'blurred-background': isDropdownOpen}">
+        <app-project-view 
+        [selected]="selected" 
+        [displayedProjects]="displayedProjects"
+        [isDropdownOpen]="isDropdownOpen" [currentPage]="currentPage" 
+        [totalPages]="totalPages"
+        [goToPage]="goToPage.bind(this)">
+        </app-project-view>
+
+        <app-project-grid 
+        [projetos]="displayedProjects">
+        </app-project-grid>
+
+        <app-pagination 
+        *ngIf="totalPages > 1" 
+        [currentPage]="currentPage" 
+        [totalPages]="totalPages"
+        (pageChange)="goToPage($event)">
+        </app-pagination>
+    </div>
+</div>

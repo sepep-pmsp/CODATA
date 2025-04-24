@@ -1,0 +1,15 @@
+<mat-form-field class="form-proj-00">
+    <mat-select 
+    [(value)]="selected" 
+    (selectionChange)="onChange.emit($event.value)" 
+    (opened)="onOpen.emit()"
+    (closed)="onClose.emit()" 
+    class="form-proj-select">
+        <mat-option 
+        *ngFor="let item of formSelection" 
+        [ngClass]="item.className" 
+        [value]="item.value">
+            {{ item.txtName }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
