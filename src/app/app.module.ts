@@ -1,21 +1,40 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule, IMAGE_CONFIG } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { PagesModule } from './pages/pages.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { IMAGE_CONFIG } from '@angular/common';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { HomeComponent } from './pages/home/home.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ComponentsModule,
-    HttpClientModule
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule,
+    PagesModule,
+    SharedModule
+  ],
+  exports: [
+    HomeComponent,
+    PagesModule,
+    SharedModule,
+    CommonModule,
+    BrowserModule,
+],
   providers: [
     provideAnimationsAsync(),
     {
@@ -28,4 +47,5 @@ import { IMAGE_CONFIG } from '@angular/common';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
