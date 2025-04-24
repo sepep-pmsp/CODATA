@@ -1,0 +1,15 @@
+.all-projects-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    transition:
+        filter 0.2s ease,
+        opacity 0.3s ease;
+
+    &.blurred-background {
+        filter: blur(4px);
+        opacity: 0.8;
+    }
+}

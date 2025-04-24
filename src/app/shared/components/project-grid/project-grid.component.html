@@ -1,0 +1,15 @@
+<div class="projects-grid">
+    <div *ngFor="let projeto of projetos" class="card">
+        <div class="card__thumb">
+            <img [src]="projeto.svg || 'assets/icons/default_image.svg'" alt="{{ projeto.title }}"
+                class="card__image" />
+        </div>
+        <div class="card__caption">
+            <h3 class="card__title">
+                <a [routerLink]="getProjectLink(projeto)">{{ projeto.title }}</a>
+            </h3>
+            <p class="card__description">{{ projeto.description }}</p>
+            <p class="card__status">{{ projeto.status }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="page__row">
+    <div class="contante_page" *ngIf="dashboard">
+        <div class="popup-overlay" *ngIf="isPopupOpen" (click)="togglePopup()"></div>
+        <div class="title_page">
+            <h2>
+                {{ dashboard.title }}
+            </h2>
+        </div>
+
+        <div class="page_embadd">
+            <iframe 
+            [src]="safeDashboardUrl" 
+            frameborder="0"
+            allowfullscreen="true"
+            class="page_iframe"></iframe>
+        </div>
+        <div class="btn__page">
+                <div class="popup" [ngClass]="{ 'popup-open': isPopupOpen }">
+                <div class="popup-content">
+                    <h1>{{ dashboard.title }}</h1>
+                    <h3>{{ dashboard.subtitle }}</h3>
+                    <p>{{ dashboard.text }}</p>
+                </div>
+                </div>
+            <div class="btn_00">
+                <button class="btn__conten" (click)="togglePopup()">
+                    <svg width="83" height="83" viewBox="0 0 83 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="83" height="83" rx="30" fill="black"/>
+                        <path d="M31 63L60 42.1936L31 20L31 63Z" fill="white"/>
+                            </svg>
+                </button>
+            </div>
+            <div class="btn_01">
+                <div class="tooltip-container">
+                    <button class="btn_link">
+                      <svg width="166" height="166" viewBox="0 0 166 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="41.5" y="41.5" width="83" height="83" rx="30" fill="black" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M104.349 64.045L98.5554 99.2635L87.4962 88.2042L68.405 107.295L59.9197 98.8102L79.0109 79.719L68.1498 68.8579L104.349 64.045Z"
+                          fill="white" />
+                      </svg>
+                    </button>
+                    <!-- Tooltip para link da página -->
+                    <div *ngIf="dashboard?.linkPage" class="tooltip tooltip1">
+                      <a [href]="dashboard.linkPage" target="_blank">
+                        <i id="icon" class="fa-solid fa-globe"></i>
+                      </a>
+                    </div>
+                    <!-- Tooltip para link do GitHub -->
+                    <div *ngIf="dashboard?.linkGitHub" class="tooltip tooltip2">
+                      <a [href]="dashboard.linkGitHub" target="_blank">
+                        <i id="icon" class="fa-brands fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
