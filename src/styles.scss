@@ -311,7 +311,7 @@ table {
     --color-neutral-300:                        oklch(0.87 0 0);
     --color-neutral-400:                        oklch(0.708 0 0);
     --color-neutral-500:                        oklch(0.556 0 0);
-    --color-neutral-600:                        oklch(0.439 0 0);
+    --color-neutral-600:                        rgb(82, 82, 82);
     --color-neutral-700:                        oklch(0.371 0 0);
     --color-neutral-800:                        oklch(0.269 0 0);
     --color-neutral-900:                        oklch(0.205 0 0);
@@ -356,8 +356,9 @@ table {
     --color-purple-red:                         rgb(121, 45, 73);
     --color-red-dark:                           rgb(139, 30, 57);
     --color-dark-red:                           rgb(159, 28, 45);
-
     --color-stone-transparent:                  rgba(0, 0, 0, 0.296);
+    --cinza-escuro:                             rgba(0, 0, 0, 0.3);
+    --cinza-meia-bomba:                         rgba(255, 255, 255, 0.741);
 }
 
 ::-webkit-scrollbar {
