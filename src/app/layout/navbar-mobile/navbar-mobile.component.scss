@@ -1,0 +1,172 @@
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .header--row {
+        width: 100%;
+        background-color: var(--color-white);
+        padding: 2rem 0;
+        z-index: 3;
+    }
+
+    .header-navbar-open{
+        height: 110vh;
+        position: fixed;
+    }
+    
+
+    .btn-toggle-00 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .navbar-close {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .header-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .header-logo-codata {
+        background-image: url(../../../assets/logos/logo.svg);
+        background-size: cover;
+        width: 158px;
+        height: 2.5rem;
+    }
+
+    .logo-prefeitura {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        width: 100%;
+        position: relative;
+        top: 15rem;
+    }
+
+    .header-logo-prefeitura {
+        background-image: url(../../../assets/logos/logo-prefeitura.svg);
+        background-size: cover;
+        width: 186px;
+        height: 4rem;
+    }
+
+    .menu-container.menu-open {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        width: 21rem;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navigatetopage {
+        padding: 0.5rem 0 0.5rem 0;
+    }
+
+    // menu toggle
+    #checkbox {
+        display: none;
+    }
+
+    .toggle {
+        width: 46px;
+        height: 29px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition-duration: 0.3s;
+    }
+
+    .bars {
+        width: 96%;
+        height: 4px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 5px;
+        transition-duration: 0.3s;
+    }
+    #checkbox:checked + .toggle {
+        width: 40px;
+    }
+
+    #checkbox:checked + .toggle .bars {
+        margin-left: 14px;
+    }
+
+    #checkbox:checked + .toggle #bar2 {
+        transform: rotate(133deg);
+        margin-left: 0;
+        transform-origin: center;
+        transition-duration: 0.3s;
+    }
+
+    #checkbox:checked + .toggle #bar1 {
+        transform: rotate(45deg);
+        transition-duration: 0.3s;
+        transform-origin: left center;
+    }
+
+    #checkbox:checked + .toggle #bar3 {
+        transform: rotate(-46deg);
+        transition-duration: 0.3s;
+        transform-origin: left center;
+    }
+
+    #checkbox:checked ~ .header-logo-codata {
+        display: none;
+        background-image: none;
+        width: 0px;
+        height: 0px;
+    }
+
+    #checkbox:checked ~ .header-logos .header-logo-codata {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .hidden {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .mainbox {
+        box-sizing: border-box;
+        position: relative;
+        width: 267px;
+        height: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 160px;
+        background-color: rgb(255, 255, 255);
+        transition:
+            max-height 1s ease,
+            opacity 1s ease;
+        animation: slide-bottom 1s forwards;
+    }
+
+    .header-logo-codata {
+        transition:
+            opacity 1s ease,
+            transform 1s ease;
+    }
+}

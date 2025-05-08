@@ -11,6 +11,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './pages/home/home.component';
+import { NavbarMobileComponent } from './layout/navbar-mobile/navbar-mobile.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    NavbarMobileComponent,
   ],
   imports: [
     CommonModule,

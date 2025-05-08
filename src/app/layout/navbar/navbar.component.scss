@@ -356,3 +356,10 @@
     opacity: 0;
     transform: translateY(-20px);
 }
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .header--row{
+        display: block;
+    }
+    
+}

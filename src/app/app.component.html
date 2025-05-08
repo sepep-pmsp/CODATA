@@ -1,5 +1,6 @@
 <div class="app-root" [ngClass]="{ 'contact-page-layout': isContactPage }">
-    <app-navbar></app-navbar>
+    <app-navbar *ngIf="!isMobile"></app-navbar>
+    <app-navbar-mobile *ngIf="isMobile"></app-navbar-mobile>
     <router-outlet></router-outlet>
     <app-footer *ngIf="!isContactPage"></app-footer>
 </div>

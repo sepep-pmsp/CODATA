@@ -1,0 +1,109 @@
+
+.navigatetopage {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.menu-open .list-toggle-00 {
+    display: block;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.list-toggle-01 {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.txt {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.txt-drop {
+    margin: 5px;
+    padding: 0.5rem 0 0 0.5rem;
+    color: #5d5d5d;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.arrow {
+    margin-left: 5px;
+    transition: transform 1s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        max-height 1s ease,
+        opacity 1s ease;
+    animation: slide-bottom 1s forwards;
+}
+
+.submenu.open {
+    max-height: 100%;
+    opacity: 1;
+}
+
+.header-logo-codata {
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}

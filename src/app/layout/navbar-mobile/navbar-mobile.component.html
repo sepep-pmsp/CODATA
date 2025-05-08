@@ -1,0 +1,31 @@
+<div class="header--row" [ngClass]="{'header-navbar-open': isMenuOpen}">
+    <div class="navbar-close" [ngClass]="{'header-logos': isMenuOpen}">
+        <div class="navigation">
+            <div class="nav">
+                <div class="menu-container" [ngClass]="{ 'menu-open': isMenuOpen }">
+                    <input type="checkbox" id="checkbox" (change)="toggleLogo($event)">
+                    <label for="checkbox" class="toggle">
+                        <div class="bars" id="bar1"></div>
+                        <div class="bars" id="bar2"></div>
+                        <div class="bars" id="bar3"></div>
+                    </label>
+                    <div class="search-bar" [ngClass]="{ 'hidden': !isSearchVisible }">
+                        <app-search-input></app-search-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-navbar">
+            <app-menu-list 
+            [dropdownState]="dropdownState"
+            *ngIf="isMenuOpen"  
+            (navigate)="navigateToPage($event)"></app-menu-list>
+        </div>
+        <div class="logos-institucionais">
+            <div class="header-logo-codata" [ngClass]="{ 'hidden': isLogoHidden }"></div>
+            <div class="logo-prefeitura">
+                <div [ngClass]="{ 'hidden': isLogoPrefeituraHidden }" class="header-logo-prefeitura"></div>
+            </div>
+        </div>
+    </div>
+</div>
