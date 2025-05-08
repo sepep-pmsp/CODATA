@@ -25,40 +25,51 @@ export class AtividadePopupComponent {
     ngOnInit(): void {
         this.route.queryParams.subscribe(params => {
             const slug = params['slug'];
+            this.openedPopupSlug = slug || null;
             if (slug) {
-                this.openedPopupSlug = slug;
+                setTimeout(() => {
+                    this.scrollToPopup();
+                }, 0);
+            } else {
+                this.desbloquearRolagem();
             }
         });
 
-        this.contentService
-            .getJson<any[]>(JsonFiles.Atividades)
-            .subscribe(projetos => {
-            });
+        this.contentService.getJson<any[]>(JsonFiles.Atividades).subscribe(atividades => {
+            this.atividades = atividades;
+        });
     }
 
     handleClick(slug: string): void {
         if (this.openedPopupSlug === slug) {
-            this.openedPopupSlug = null;
+            this.closePopupFn();
         } else {
+            this.router.navigate(['/'], {
+                relativeTo: this.route,
+                queryParams: { slug },
+                queryParamsHandling: 'merge',
+            });
             this.openedPopupSlug = slug;
+            this.bloquearRolagem();
+            setTimeout(() => {
+                this.scrollToPopup();
+            }, 0);
         }
-        setTimeout(() => {
-            this.scrollToPopup();
-        }, 0);
     }
 
     isPopupOpen(slug: string): boolean {
         return this.openedPopupSlug === slug;
-        this.openPopup.emit(slug);
     }
 
     closePopupFn(): void {
         const scrollY = window.scrollY;
-        this.closePopup.emit();
-        this.openedPopupSlug = null;
-        this.router.navigate(['/']).then(() => {
-            window.scrollTo(0, scrollY);
+        this.router.navigate(['/'], {
+            relativeTo: this.route,
+            queryParams: {},
         });
+        this.openedPopupSlug = null;
+        this.desbloquearRolagem();
+        setTimeout(() => window.scrollTo(0, scrollY), 0);
     }
 
     scrollToPopup() {
@@ -78,6 +89,16 @@ export class AtividadePopupComponent {
 
     navigateToAssignments(slug: string): void {
         this.router.navigate(['/atribuicoes'], { queryParams: { slug } });
+    }
+
+    bloquearRolagem(): void {
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+    }
+
+    desbloquearRolagem(): void {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
     }
 
     popupMapping: { [key: string]: number } = {

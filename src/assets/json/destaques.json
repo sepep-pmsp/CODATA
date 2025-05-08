@@ -1,28 +1,41 @@
 {
-    "bigContents": [
-      {
-        "buttonNews": "notícia",
-        "buttonProjects": "projeto",
-        "title": "O Observatório de Indicadores da Cidade de São Paulo (ObservaSampa) é uma política pública de Estado de dados",
-        "date": "2024-11-23T00:00:00Z"
-      }
-    ],
-    "smallContents": [
-      {
-        "buttonLabel": "projeto",
-        "title": "Estudos de CODATA sobre...",
-        "date": "2024-01-02T00:00:00Z"
-      },
-      {
-        "buttonLabel": "projeto",
-        "title": "artigo discorre sobre...",
-        "date": "2024-01-02T00:00:00Z"
-      },
-      {
-        "buttonLabel": "projeto",
-        "title": "desenvolvimento Web .....",
-        "date": "2024-01-02T00:00:00Z"
-      }
-    ]
-  }
-  
+  "bigContents": [
+    {
+      "buttonNews": "notícia",
+      "buttonProjects": "projeto",
+      "title": "O Observatório de Indicadores da Cidade de São Paulo (ObservaSampa) é uma política pública de Estado de dados",
+      "date": "2024-11-23T00:00:00Z",
+      "backgroundColor": "#717171",
+      "img":"https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/chamadas/capa-pobservasampa_1669229645.png"
+    }
+  ],
+  "smallContents": [
+    {
+      "buttonLabel": "projeto",
+      "title": "Estudos de CODATA sobre...",
+      "date": "2024-01-02T00:00:00Z",
+      "class": "box-small-image-00",
+      "img_class": "image00",
+      "backgroundColor": "#232323",
+      "img": "https://images.pexels.com/photos/14553704/pexels-photo-14553704.jpeg"
+    },
+    {
+      "buttonLabel": "projeto",
+      "title": "artigo discorre sobre...",
+      "date": "2024-01-02T00:00:00Z",
+      "class": "box-small-image-01",
+      "img_class": "image00",
+      "backgroundColor": "#232323",
+      "img": "https://images.pexels.com/photos/27427258/pexels-photo-27427258/free-photo-of-tecnologia-computador-exibicao-visor.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "buttonLabel": "projeto",
+      "title": "desenvolvimento Web .....",
+      "date": "2024-01-02T00:00:00Z",
+      "class": "box-small-image-02",
+      "img_class": "image00",
+      "backgroundColor": "#232323",
+      "img": "https://images.pexels.com/photos/270623/pexels-photo-270623.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+}

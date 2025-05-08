@@ -56,13 +56,13 @@
 }
 
 .box-activity {
-    width: 20rem;
-    height: 20rem;
+    width: 16rem;
+    height: 16rem;
     background-color: var(--color-black);
     border-radius: 3rem;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     &:hover {
-        background-color: #fdfdfd;
+        background-color: var(--color-white);
         svg path {
             fill: var(--color-black);
         }
@@ -92,19 +92,19 @@
 .apoio-sys,
 .design,
 .developer-web {
-    height: 20rem;
+    height: 16rem;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding: 2rem;
 }
 
 .material-txt,
 .material-txt-dd,
 .material-txt-limp {
-    font-size: 2rem;
+    font-size: 24px;
     color: var(--color-white);
 }
 
@@ -118,8 +118,8 @@
     align-items: center;
     z-index: 5;
     position: absolute;
-    left: 22rem;
-    top: 122rem;
+    left: 23rem;
+    top: 131rem;
     background-color: var(--color-white);
     box-shadow: 0px 0px 20px 20px rgba(67, 67, 67, 0.56);
     animation: slide-top 0.9s;
@@ -127,9 +127,10 @@
 
 .closePopup {
     background-color: rgba(72, 72, 72, 0.34);
-    width: 100%;
-    height: 100%;
+    width: 98%;
+    height: 137%;
     position: absolute;
+    left: 1rem;
     z-index: 4;
     box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.26);
     animation: slide-bottom 0.9s;
@@ -140,6 +141,11 @@
     font-size: 27px;
     width: 50rem;
     text-align: justify;
+}
+
+.svgclass {
+    width: 3rem;
+    height: auto;
 }
 
 @keyframes slide-top {
@@ -159,5 +165,39 @@
     }
     100% {
         transform: translateY(100px);
+    }
+}
+
+@media screen and (max-width: 426px) and (min-width: 320px) {
+    .activity-area {
+        margin: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .box-activity00 {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        margin: 2%;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        height: auto;
+        overflow-y: hidden;
+        padding: 0px 3rem 0 120rem;
+    }
+    .obt-limp-dd,
+    .auto-rot,
+    .analise-dd,
+    .desenvol-paper,
+    .apoio-sys,
+    .design,
+    .developer-web {
+        width: 16rem;
     }
 }

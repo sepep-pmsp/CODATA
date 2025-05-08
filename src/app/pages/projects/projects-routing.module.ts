@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { AtividadePopupComponent } from '../home/sections/atividade-popup/atividade-popup.component';
 
 const routes: Routes = [
     {

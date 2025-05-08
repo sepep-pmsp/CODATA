@@ -7,8 +7,13 @@
         <div *ngFor="let atividade of atividades" class="box-activity" (click)="handleClick(atividade.slug)">
             <div [ngClass]="atividade.class">
                 <div class="svgclass">
-                    <svg [attr.viewBox]="atividade.svg.viewBox" [attr.width]="atividade.svg.width"
-                        [attr.height]="atividade.svg.height" xmlns="atividade.xmlns" fill="#FFFFFF">
+                    <svg 
+                    [attr.viewBox]="atividade.svg.viewBox"     
+                    [attr.width]="atividade.svg.width"
+                    [attr.height]="atividade.svg.height" 
+                    xmlns="atividade.xmlns" 
+                    fill="#FFFFFF"
+                    class="svgclass">
                         <path [attr.d]="atividade.svg.path"></path>
                     </svg>
                 </div>
