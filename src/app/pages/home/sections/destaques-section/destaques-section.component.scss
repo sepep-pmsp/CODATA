@@ -9,20 +9,20 @@
 
 .box-conten-big,
 .box-conten-small {
-  width: 100%;
-  height: 50%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  transition: transform 0.3s ease;
-  justify-content: flex-end;
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    justify-content: flex-end;
 }
 .box-conten-big:hover,
 .box-conten-small:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .box-conten-big {
@@ -91,10 +91,71 @@
     }
 }
 
-.txt-title, .txt-paragraph{
+.txt-title,
+.txt-paragraph {
     color: var(--color-white);
 }
 
-.image-cards{
+.image-cards {
     width: 5rem;
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .box-conten {
+        display: flex;
+        gap: 28rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        padding: 0;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 60%;
+    }
+
+    .box-big,
+    .box-small {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        gap: 1rem;
+    }
+
+    .box-conten-big,
+    .box-conten-small {
+        min-width: 20rem;
+        height: 23rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        scroll-snap-align: start;
+        transition: none;
+        flex-shrink: 0;
+    }
+
+    .box-small {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        flex-shrink: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-conten-big {
+        width: 22rem;
+    }
+
+    .txt-title,
+    .txt-paragraph {
+        font-size: 18px;
+        color: var(--color-white);
+    }
 }

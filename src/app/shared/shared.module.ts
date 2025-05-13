@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { RouterModule } from '@angular/router';
+import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
 
 
 @NgModule({
   declarations: [
     SearchInputComponent,
-    MenuListComponent
+    MenuListComponent,
+    SearchMobileComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     SearchInputComponent,
-    MenuListComponent
+    MenuListComponent,
+    SearchMobileComponent
   ]
 })
 export class SharedModule { }

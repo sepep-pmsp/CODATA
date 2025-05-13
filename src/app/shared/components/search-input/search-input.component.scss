@@ -27,6 +27,10 @@
     padding-right: 8px;
 }
 
+.checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+}
+
 .checkbox {
     box-sizing: border-box;
     width: 30px;

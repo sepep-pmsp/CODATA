@@ -1,11 +1,21 @@
 <div class="homepage">
     <div class="home-content">
-        <app-about-section></app-about-section>
-        <app-destaques-section [bigContents]="bigContents" [smallContents]="smallContents"></app-destaques-section>
-        <app-atividade-popup [atividades]="atividades" [openedPopupSlug]="openedPopupSlug"
-            (openPopup)="openPopup($event)" (closePopup)="closePopup()">
-        </app-atividade-popup>
-        <app-home-buttons></app-home-buttons>
-        <app-parceiros [partners]="partners"></app-parceiros>
+        <div class="home-about-section mobile-about-section">
+            <app-about-section></app-about-section>
+        </div>
+        <div class="home-destaques-section mobile-destaques-section">
+            <app-destaques-section [bigContents]="bigContents" [smallContents]="smallContents"></app-destaques-section>
+        </div>
+        <div class="home-atividade-section mobile-atividade-section">
+            <app-atividade-popup [atividades]="atividades" [openedPopupSlug]="openedPopupSlug"
+                (openPopup)="openPopup($event)" (closePopup)="closePopup()">
+            </app-atividade-popup>
+        </div>
+        <div class="home-buttons-section mobile-buttons-section">
+            <app-home-buttons></app-home-buttons>
+        </div>
+        <div class="home-parceiros-section mobile-parceiros-section">
+            <app-parceiros [partners]="partners"></app-parceiros>
+        </div>
     </div>
 </div>
