@@ -209,4 +209,32 @@
         border-radius: 3rem;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
+
+    .pop-up {
+        width: 23rem;
+        height: 25rem;
+        border: 1px solid rgba(67, 67, 67, 0.56);
+        border-radius: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        position: absolute;
+        left: 0rem;
+        top: 6rem;
+        background-color: var(--color-white);
+    }
+
+    .txt-p-popup {
+        padding: 1rem;
+        font-size: 17px;
+        width: 21rem;
+        text-align: justify;
+    }
+
+    .closePopup {
+        height: 300%;
+        position: absolute;
+        top: -1rem;
+    }
 }

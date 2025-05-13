@@ -31,7 +31,6 @@ export class AtividadePopupComponent {
                     this.scrollToPopup();
                 }, 0);
             } else {
-                this.desbloquearRolagem();
             }
         });
 
@@ -50,7 +49,6 @@ export class AtividadePopupComponent {
                 queryParamsHandling: 'merge',
             });
             this.openedPopupSlug = slug;
-            this.bloquearRolagem();
             setTimeout(() => {
                 this.scrollToPopup();
             }, 0);
@@ -68,7 +66,6 @@ export class AtividadePopupComponent {
             queryParams: {},
         });
         this.openedPopupSlug = null;
-        this.desbloquearRolagem();
         setTimeout(() => window.scrollTo(0, scrollY), 0);
     }
 
@@ -91,15 +88,6 @@ export class AtividadePopupComponent {
         this.router.navigate(['/atribuicoes'], { queryParams: { slug } });
     }
 
-    bloquearRolagem(): void {
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
-    }
-
-    desbloquearRolagem(): void {
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-    }
 
     popupMapping: { [key: string]: number } = {
         'ObtencaoLimpezaDados': 0,
