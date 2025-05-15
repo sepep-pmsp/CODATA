@@ -2,7 +2,7 @@
     padding: 16rem 1rem 2rem 1rem;
 }
 
-.projects-container{
+.projects-container {
     width: 100%;
     padding: 3rem 1rem;
     display: flex;
@@ -24,4 +24,17 @@
     padding: 1rem;
     gap: 1.5rem;
     height: 10rem;
+}
+@media screen and (min-width: 318px) and (max-width: 768px) and (hover: none){
+    .projects-all {
+        padding: 0 !important;
+        width: 112%;
+    }
+
+    .forms-projects {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+        right: 1rem;
+    }
 }

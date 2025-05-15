@@ -77,3 +77,24 @@
 .img_box {
     width: 15rem;
 }
+
+@media screen and (min-width: 318px) and (max-width: 768px) and (hover: none) {
+    .box-dash {
+        width: 26rem;
+        height: 16rem;
+        flex-direction: column-reverse;
+    }
+
+    .img_box {
+        width: 14rem;
+    }
+    .img_dash00,
+    .img_dash01,
+    .img_dash02 {
+        height: 6rem;
+        width: 21rem;
+    }
+    .txt_subtitle_mobile, ._description_{
+        display: none;
+    }
+}
