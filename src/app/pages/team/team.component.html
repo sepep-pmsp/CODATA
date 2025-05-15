@@ -32,6 +32,10 @@
         <div class="overlay" [class.show]="isPopupOpen" (click)="closePopup()"></div>
         <div class="pop-up_team" [ngClass]="popupAnimationClass">
             <div class="pop-up-content">
+                <div class="mobile-popup">
+                    <h2 class="h_complete_name_mobile">{{ selectedTeam?.complete_name }}</h2>
+                    <p class="p_position_mobile">{{ selectedTeam?.position }}</p>
+                </div>
                 <p class="pop-up_p">{{ selectedTeam?.description_position }}</p>
             </div>
         </div>

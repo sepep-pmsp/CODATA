@@ -48,6 +48,6 @@ export class TeamComponent implements OnInit {
         setTimeout(() => {
             this.isPopupOpen = false;
             this.selectedTeam = null;
-        }, 500);
+        }, 90);
     }
 }
