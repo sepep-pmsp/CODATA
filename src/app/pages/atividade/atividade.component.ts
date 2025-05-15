@@ -1,33 +1,40 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
 
 @Component({
     selector: 'app-atividade',
     templateUrl: './atividade.component.html',
-    styleUrl: './atividade.component.scss',
+    styleUrls: ['./atividade.component.scss'],
     animations: [
         trigger('slideIn', [
             transition(':enter', [
-                style({ transform: 'translateX(-100px)', opacity: 0 }),
+                style({ 
+                    transform: '{{transformStart}}', 
+                    opacity: 0 
+                }),
                 animate(
                     '0.5s ease-in',
-                    style({ transform: 'translateX(0)', opacity: 1 })
+                    style({ transform: '{{transformEnd}}', opacity: 1 })
                 )
-            ])
+            ], { params: { transformStart: 'translateX(-100px)', transformEnd: 'translateX(0)' } })
         ])
     ]
 })
 export class AtividadeComponent {
     atividades: any[] = [];
     activePopup: any = null;
+    transformStart: string = 'translateX(-100px)';
+    transformEnd: string = 'translateX(0)';
 
     constructor(
         private router: Router,
         private route: ActivatedRoute,
         private assignmentsService: ContentService
-    ) { }
+    ) {
+        this.updateAnimationDirection();
+    }
 
     ngOnInit(): void {
         this.assignmentsService.getJson<any[]>('atividades.json').subscribe((data) => {
@@ -37,20 +44,27 @@ export class AtividadeComponent {
                 this.openPopupBySlug(slug);
             }
         });
-    };
+    }
+
+    @HostListener('window:resize')
+    updateAnimationDirection(): void {
+        if (window.innerWidth <= 768) {
+            this.transformStart = 'translateY(-100px)';
+            this.transformEnd = 'translateY(0)';
+        } else {
+            this.transformStart = 'translateX(-100px)';
+            this.transformEnd = 'translateX(0)';
+        }
+    }
 
     openPopup(atividade: any): void {
         if (this.activePopup?.slug === atividade.slug) {
-            // Mesmo card: fecha
             this.closePopup();
         } else {
-            // Fecha o anterior (zera), espera um microtempo e abre o novo
             this.activePopup = null;
 
             setTimeout(() => {
                 this.activePopup = atividade;
-
-                // Atualiza a URL com o novo slug
                 const queryParams = { slug: atividade.slug };
                 this.router.navigate([], {
                     relativeTo: this.route,
@@ -58,7 +72,7 @@ export class AtividadeComponent {
                     queryParamsHandling: 'merge',
                     replaceUrl: true
                 });
-            }, 0); // Delay mínimo para garantir troca
+            }, 0);
         }
     }
 
