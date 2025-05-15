@@ -50,17 +50,17 @@
             </button>
             <ul [ngClass]="{'open': dropdownState.institucional}" class="submenu">
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('/equipe')" class="txt-drop">
+                    <a [routerLink]="'equipe'" class="txt-drop">
                         equipe
                     </a>
                 </li>
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('/atribuicoes')" class="txt-drop">
+                    <a [routerLink]="'atribuicoes'" class="txt-drop">
                         atribuições
                     </a>
                 </li>
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('/contato')" class="txt-drop">
+                    <a [routerLink]="'contato'" class="txt-drop">
                         contato
                     </a>
                 </li>
