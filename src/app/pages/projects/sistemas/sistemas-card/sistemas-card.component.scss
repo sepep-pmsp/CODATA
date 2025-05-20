@@ -107,12 +107,50 @@
 	color: transparent;
 	width: 8rem;
 	height: 0.5rem;
-	background: rgba(0, 0, 0, 0.3); // Cinza escuro
+	background: rgba(0, 0, 0, 0.3); 
 	cursor: pointer;
 	transition: background 0.3s ease;
-
-	// Estilo do botão ativo
 	&.active {
-		background: var(--color-black); // Preto
+		background: var(--color-black);
 	}
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px) and (hover: none) {
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card__caption,
+    .card__description,
+    .card__status {
+        display: none;
+    }
+
+    .card {
+        width: 19rem;
+        height: 16rem;
+
+        .card__thumb {
+            flex-direction: row-reverse;
+            justify-content: space-around;
+        }
+
+        .card__mobile {
+            display: flex;
+        }
+        .card__image {
+            width: 5rem;
+        }
+    }
+    .card__title_mobile {
+        font-size: 1.2rem;
+        color: var(--color-white);
+        & a {
+            color: var(--color-white);
+        }
+    }
 }

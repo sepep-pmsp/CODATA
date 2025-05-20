@@ -22,7 +22,7 @@
 .footer_lateral {
     background-color: var(--color-black);
     width: 71rem;
-    height: 46.99rem;
+    height: 53.23rem;
     margin-left: 2rem;
     border-top-left-radius: 10rem;
     border-bottom-left-radius: 10rem;
@@ -39,9 +39,9 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: auto;
     gap: 4rem;
     padding: 6rem 0 2rem 0;
+    height: 100%;
 }
 
 .list-contact-footer {
@@ -66,7 +66,7 @@
     width: 45rem;
 }
 
-.contact_email{
+.contact_email {
     text-decoration: underline;
 }
 
@@ -110,5 +110,57 @@
             transform: translateY(0);
             animation-timing-function: ease-out;
         }
+    }
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .contact-page-layout {
+        padding: 0;
+        position: absolute;
+        top: 17.5rem;
+    }
+    .contact__layout {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content_list {
+        padding: 0;
+    }
+    .list_footer {
+        padding: 1.5rem 1rem;
+        gap: 0;
+        justify-content: flex-end;
+    }
+    .list-contact-footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 0.5rem;
+    }
+    .footer_lateral {
+        width: 26.55rem;
+        height: 34rem;
+        margin: 0;
+        border-top-left-radius: 5rem;
+        border-top-right-radius: 5rem;
+        border-bottom-left-radius: 0;
+    }
+    .contact_localization,
+    .contact_email,
+    .contact_telephone {
+        font-size: 1.5rem;
+        width: auto;
+    }
+    .img-contact {
+        width: 2.5rem;
+    }
+    .icon_animation {
+        display: none;
     }
 }

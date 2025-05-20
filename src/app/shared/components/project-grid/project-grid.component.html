@@ -3,6 +3,11 @@
         <div class="card__thumb">
             <img [src]="projeto.svg || 'assets/icons/default_image.svg'" alt="{{ projeto.title }}"
                 class="card__image" />
+            <div class="card__mobile">
+                <h3 class="card__title_mobile">
+                    <a [routerLink]="getProjectLink(projeto)">{{ projeto.title }}</a>
+                </h3>
+            </div>
         </div>
         <div class="card__caption">
             <h3 class="card__title">

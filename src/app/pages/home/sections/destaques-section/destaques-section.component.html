@@ -1,31 +1,51 @@
 <div class="box-conten">
     <div class="box-big">
-        <div *ngFor="let item of bigContents" class="box-conten-big">
-            <div class="conten-txt-btn">
-                <div class="btn-conten-box">
-                    <button class="button">{{ item.buttonNews }}</button>
-                    <button class="button">{{ item.buttonProjects }}</button>
-                </div>
-                <div>
-                    <h2 class="txt-title">{{ item.title }}</h2>
-                </div>
-                <div>
-                    <p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p>
-                </div>
-            </div>
+      <div
+        *ngFor="let item of bigContents"
+        class="box-conten-big"
+        [ngStyle]="{
+          'background-image': item.img ? 'url(' + item.img + ')' : 'none',
+          'background-color': item.backgroundColor || item.backgroundColor
+        }"
+      >
+        <div class="conten-txt-btn">
+          <div class="btn-conten-box">
+            <button class="button">{{ item.buttonNews }}</button>
+            <button class="button">{{ item.buttonProjects }}</button>
+          </div>
+          <div>
+            <h2 class="txt-title">{{ item.title }}</h2>
+          </div>
+          <div>
+            <p class="txt-paragraph">
+              {{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+  
     <div class="box-small">
-        <div *ngFor="let item of smallContents" class="box-conten-small">
-            <div class="btn-conten-box">
-                <button class="button">{{ item.buttonLabel }}</button>
-            </div>
-            <div>
-                <h2 class="txt-title">{{ item.title }}</h2>
-            </div>
-            <div>
-                <p>{{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}</p>
-            </div>
+      <div
+        *ngFor="let item of smallContents"
+        class="box-conten-small"
+        [ngClass]="item.class"
+        [ngStyle]="{
+          'background-image': item.img ? 'url(' + item.img + ')' : 'none',
+          'background-color': item.backgroundColor || item.backgroundColor
+        }"
+      >
+        <div class="btn-conten-box">
+          <button class="button">{{ item.buttonLabel }}</button>
         </div>
+        <div>
+          <h2 class="txt-title">{{ item.title }}</h2>
+        </div>
+        <div>
+          <p class="txt-paragraph">
+            {{ item.date | date: 'dd \'de\' MMMM \'de\' yyyy' }}
+          </p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>  

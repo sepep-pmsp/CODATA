@@ -59,6 +59,10 @@
         border-radius: 2rem;
     }
 
+    .card__mobile {
+        display: none;
+    }
+
     .card__caption {
         opacity: 0;
         display: flex;
@@ -91,6 +95,47 @@
             font-size: 1.5rem;
             color: var(--color-neutral-600);
             font-style: italic;
+        }
+    }
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card__caption,.card__description,.card__status{
+        display: none;
+        &:hover{
+            display: none;
+        }
+    }
+
+    .card {
+        width: 19rem;
+        height: 16rem;
+
+        .card__thumb {
+            flex-direction: row-reverse;
+            justify-content: space-around;
+        }
+
+        .card__mobile {
+            display: flex;
+        }
+        .card__image {
+            width: 5rem;
+        }
+    }
+    .card__title_mobile {
+        font-size: 1.2rem;
+        color: var(--color-white);
+        & a {
+            color: var(--color-white);
         }
     }
 }

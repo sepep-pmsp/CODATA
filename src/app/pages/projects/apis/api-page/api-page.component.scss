@@ -273,3 +273,61 @@ h2 {
     font-size: 19px;
     font-weight: 200;
 }
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .__api_page__ {
+        padding: 0;
+    }
+    ._title_list_template_ {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
+    .__list_template__,
+    .__title_template__,
+    ._text_ {
+        width: 19rem;
+    }
+    .links {
+        width: 20rem;
+        height: 10rem;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    ._template_grid_ {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .accordion-container {
+        width: 20rem;
+    }
+
+    .title-2{
+        right: 0rem;
+    }
+    .accordion-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 3rem;
+        padding: 1rem;
+        font-weight: bold;
+        background-color: #cacaca;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .accordion-content.open {
+        max-height: 60rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}

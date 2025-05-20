@@ -1,0 +1,95 @@
+.container {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.checkbox:focus {
+    border: none;
+    outline: none;
+}
+
+.checkbox:checked {
+    right: 10px;
+}
+
+.checkbox:checked ~ .mainbox {
+    width: 50px;
+}
+
+.checkbox:checked ~ .mainbox .search_input {
+    width: 0;
+    height: 0px;
+    background-color: transparent !important;
+}
+
+.checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+}
+
+.checkbox:checked ~ .mainbox .iconContainer {
+    padding-right: 8px;
+}
+
+.checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none;
+}
+
+.search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 216px;
+    background-color: rgb(173 173 173 / 12%);
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 17px;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s ease;
+    border-radius: 3rem;
+    font-family: "Familjen Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.search_input::placeholder {
+    color: rgba(53, 52, 52, 0.776);
+}
+
+.iconContainer {
+    box-sizing: border-box;
+    padding-top: 5px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.search_icon {
+    box-sizing: border-box;
+    fill: rgb(0, 0, 0);
+    font-size: 3.3em;
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px){
+    .search_icon {
+        box-sizing: border-box;
+        fill: rgb(0, 0, 0);
+        font-size: 2.1em;
+    }
+    .iconContainer {
+        box-sizing: border-box;
+        padding-top: 25px;
+        width: fit-content;
+        transition: all 0.3s ease;
+    }
+
+}

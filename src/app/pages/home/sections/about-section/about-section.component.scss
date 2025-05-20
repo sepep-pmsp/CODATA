@@ -16,3 +16,24 @@
     font-size: 25px;
     padding-top: 2rem;
 }
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .conten {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        flex-wrap: nowrap;
+    }
+    .content-txt00 {
+        width: 20rem;
+        text-align: start;
+    }
+    .txt00 {
+        font-size: 29px;
+    }
+    .ptxt00 {
+        font-size: 19px;
+        padding-top: 2rem;
+    }
+}

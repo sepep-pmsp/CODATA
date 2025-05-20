@@ -1,0 +1,70 @@
+<div class="list-toggle-00">
+    <ul class="list-toggle-01">
+        <li class="list-toggle-02">
+            <a href="" class="txt">
+                início
+            </a>
+        </li>
+        <li class="list-toggle-02">
+            <div class="btn-toggle-00">
+                <button (click)="toggleSubmenu('projetos')" class="dropdown-btn">
+                    <p class="txt">
+                        <a (click)="navigate.emit('all')">
+                            projetos
+                        </a>
+                    </p>
+                    <span class="arrow" [ngClass]="{'open': dropdownState.projetos}">
+                        ▼
+                    </span>
+                </button>
+            </div>
+            <ul [ngClass]="{'open': dropdownState.projetos}" class="submenu">
+                <li class="navigatetopage">
+                    <a (click)="navigate.emit('sistemas')" class="txt-drop">
+                        sistemas
+                    </a>
+                </li>
+                <li class="navigatetopage">
+                    <a (click)="navigate.emit('sites')" class="txt-drop">
+                        sites
+                    </a>
+                </li>
+                <li class="navigatetopage">
+                    <a (click)="navigate.emit('API')" class="txt-drop">
+                        API
+                    </a>
+                </li>
+                <li class="navigatetopage">
+                    <a (click)="navigate.emit('dashboard')" class="txt-drop">
+                        dashboard
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="list-toggle-02-ist">
+            <button (click)="toggleSubmenu('institucional')" class="dropdown-btn">
+                <p class="txt">institucional</p>
+                <span class="arrow" [ngClass]="{'open': dropdownState.institucional}">
+                    ▼
+                </span>
+            </button>
+            <ul [ngClass]="{'open': dropdownState.institucional}" class="submenu">
+                <li class="navigatetopage">
+                    <a [routerLink]="'equipe'" class="txt-drop">
+                        equipe
+                    </a>
+                </li>
+                <li class="navigatetopage">
+                    <a [routerLink]="'atribuicoes'" class="txt-drop">
+                        atribuições
+                    </a>
+                </li>
+                <li class="navigatetopage">
+                    <a [routerLink]="'contato'" class="txt-drop">
+                        contato
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -22,3 +22,31 @@
     width: 18rem;
     height: 12rem;
 }
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
+    .content-partners {
+        position: relative;
+        bottom: 20rem;
+    }
+
+    .partners-area{
+        gap: 2rem;
+    }
+
+    .partners-txt {
+        font-size: 3rem;
+    }
+
+    .partners-area-img {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .partner-img {
+        width: 9rem;
+        height: 5rem;
+    }
+}

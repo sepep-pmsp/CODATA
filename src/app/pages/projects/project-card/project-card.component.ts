@@ -45,9 +45,7 @@ export class ProjectCardComponent implements OnInit {
     loadAllProjects(): void {
         const paths = [
             JsonFiles.Api,
-            JsonFiles.BancoDeDados,
             JsonFiles.Dashboard,
-            JsonFiles.Estudos,
             JsonFiles.Sistemas,
             JsonFiles.Sites,
         ];
