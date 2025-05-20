@@ -18,10 +18,14 @@ export class ContentService {
         return forkJoin(paths.map((path) => this.getJson<T>(path)));
     }
 
+    getMultipleJsonSearch<T>(paths: string[]): Observable<T[][]> {
+        return forkJoin(paths.map((path) => this.getJson<T[]>(path)));
+    }
+
     getContent<T>(tipo: string): Observable<T[]> {
         return this.getJson<T[]>(`${tipo}.json`);
     }
-    
+
     buscarPorUrl<T>(tipo: string, url: string): Observable<T | undefined> {
         return this.http.get<T[]>(`assets/json/${tipo}.json`).pipe(
             map((itens: T[]) => itens.find((item: any) => item.url === url))

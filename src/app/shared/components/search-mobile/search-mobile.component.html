@@ -1,3 +1,8 @@
 <div class="container-search-mobile">
-    <input class="search_input" placeholder="buscar" type="text">
+    <input 
+    class="search_input" 
+    placeholder="buscar"   
+    type="text" 
+    [(ngModel)]="searchTerm"
+    (keyup.enter)="onSearch()" />
 </div>

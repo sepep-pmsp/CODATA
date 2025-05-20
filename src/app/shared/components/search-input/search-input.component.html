@@ -9,7 +9,12 @@
                     </path>
                 </svg>
             </div>
-            <input class="search_input" placeholder="buscar" type="text">
+            <input 
+            class="search_input" 
+            placeholder="Buscar" 
+            type="text" 
+            [(ngModel)]="searchTerm"
+            (keyup.enter)="onSearch()" />
         </div>
     </div>
 </div>

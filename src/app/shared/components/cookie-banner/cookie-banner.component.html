@@ -1,13 +1,13 @@
 <div *ngIf="showBanner && content" class="cookie-banner">
     <div class="cookie-text">
-        <h4>{{ content.title }}</h4>
-        <p>{{ content.description }}
-            <a [href]="content.link" target="_blank" rel="noopener noreferrer">
+        <h4 class="title-cookies">{{ content.title }}</h4>
+        <p class="paragraph-cookies">{{ content.description }}
+            <a [href]="content.link" target="_blank" rel="noopener noreferrer" class="a-link">
                 {{ content.name_link }}
             </a>
         </p>
     </div>
-    <button (click)="acceptCookies()">
+    <button (click)="acceptCookies()" class="btn-cookies" >
         {{ content.name_button }}
     </button>
 </div>
