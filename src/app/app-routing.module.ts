@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'equipe', component: TeamComponent },
   { path: 'atribuicoes', component: AtividadeComponent },
   { path: 'contato', component: ContactComponent },
+  { path: 'atribuicoes/:slug', component: AtividadeComponent },
+
   {
     path: 'projetos',
     loadChildren: () =>

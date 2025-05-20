@@ -79,7 +79,16 @@
     font-size: 3.3em;
 }
 
-@media screen and (min-width: 318px) and (max-width: 768px){
+.mainbox {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+@media screen and (min-width: 318px) and (max-width: 768px) {
     .search_icon {
         box-sizing: border-box;
         fill: rgb(0, 0, 0);
@@ -91,5 +100,4 @@
         width: fit-content;
         transition: all 0.3s ease;
     }
-
 }

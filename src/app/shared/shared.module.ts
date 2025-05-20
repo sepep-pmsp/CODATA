@@ -7,6 +7,7 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { RouterModule } from '@angular/router';
 import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
 import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.
     BrowserModule,
     RouterModule,
     HttpClientModule,
+    FormsModule,
 ],
   exports: [
     SearchInputComponent,
