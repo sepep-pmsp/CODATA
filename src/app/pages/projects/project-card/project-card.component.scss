@@ -28,7 +28,10 @@
 @media screen and (min-width: 318px) and (max-width: 768px) and (hover: none){
     .projects-all {
         padding: 0 !important;
-        width: 112%;
+        width: 100%;
+    }
+    .all-projects-area{
+        width: 100%;
     }
 
     .forms-projects {
@@ -36,5 +39,8 @@
         flex-wrap: nowrap;
         position: relative;
         right: 1rem;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 }
