@@ -1,0 +1,52 @@
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--color-stone-100);
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--color-stone-300);
+    box-shadow: -1px -20px 20px 20px rgba(0, 0, 0, 0.116);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1000;
+    border-top-right-radius: 3rem;
+    border-top-left-radius: 3rem;
+    transition: all 0.3s ease-in-out;
+
+    .cookie-text {
+        max-width: 96rem;
+        margin: 0 auto;
+        text-align: start;
+
+        h4 {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 0.25rem;
+        }
+
+        a {
+            color: var(--color-blue-900);
+            text-decoration: underline;
+        }
+    }
+
+    button {
+        align-self: center;
+        background-color: var( --color-stone-950);
+        color: var(--color-white);
+        border: none;
+        padding: 0.5rem 1.25rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition:  all 0.3s ease-in-out;
+
+        &:hover {
+            transition:  all 0.3s ease-in-out;
+            background-color: var( --color-blue-950);
+        }
+    }
+}

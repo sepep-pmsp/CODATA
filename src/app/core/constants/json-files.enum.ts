@@ -10,4 +10,5 @@ export enum JsonFiles {
     Sistemas = 'sistemas.json',
     Sites = 'site.json',
     Team = 'team.json',
+    Cookies = 'cookies.json',
 }
