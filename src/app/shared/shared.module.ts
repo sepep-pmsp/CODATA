@@ -6,13 +6,15 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { RouterModule } from '@angular/router';
 import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 
 @NgModule({
   declarations: [
     SearchInputComponent,
     MenuListComponent,
-    SearchMobileComponent
+    SearchMobileComponent,
+    CookieBannerComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { SearchMobileComponent } from './components/search-mobile/search-mobile.
   exports: [
     SearchInputComponent,
     MenuListComponent,
-    SearchMobileComponent
+    SearchMobileComponent,
+    CookieBannerComponent
   ]
 })
 export class SharedModule { }
