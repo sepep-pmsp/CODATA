@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit {
             }
         }
     }
-    
+
     toggleSubmenu(menu: 'projetos' | 'institucional'): void {
         this.dropdownState[menu] = !this.dropdownState[menu];
     }
@@ -55,6 +55,9 @@ export class NavbarComponent implements OnInit {
         this.route.paramMap.subscribe(params => {
             const filter = params.get('filter');
             this.selected = filter ? filter : 'all';
+            this.router.navigate(['/projetos', this.selected], {
+                state: { fromNavbar: true }
+            });
         });
         this.router.events.subscribe(() => {
             this.closeMenu();

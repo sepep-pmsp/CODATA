@@ -12,7 +12,6 @@ import { BasePageComponent } from '../../../../shared/components/base/base-page.
 })
 export class ApiPageComponent extends BasePageComponent<Api> {
     override afterItemLoad(item: Api): void {
-        console.log('Item carregado:', item);
         this.selectedApi = item;
     }
     options: string[] = [];
@@ -25,7 +24,6 @@ export class ApiPageComponent extends BasePageComponent<Api> {
     ) {
         super(contentService, activatedRoute, 'api');
     }
-
 
     copyToClipboard(url: string): void {
         navigator.clipboard.writeText(url).then(() => {

@@ -1,7 +1,7 @@
 <div class="list-toggle-00">
     <ul class="list-toggle-01">
         <li class="list-toggle-02">
-            <a href="" class="txt">
+            <a [routerLink]="''" class="txt">
                 início
             </a>
         </li>
@@ -20,12 +20,12 @@
             </div>
             <ul [ngClass]="{'open': dropdownState.projetos}" class="submenu">
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('sistemas')" class="txt-drop">
+                    <a (click)="onClick('Sistemas', $event)" class="txt-drop">
                         sistemas
                     </a>
                 </li>
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('sites')" class="txt-drop">
+                    <a (click)="navigate.emit('Sites')" class="txt-drop">
                         sites
                     </a>
                 </li>
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li class="navigatetopage">
-                    <a (click)="navigate.emit('dashboard')" class="txt-drop">
+                    <a (click)="navigate.emit('Dashboard')" class="txt-drop">
                         dashboard
                     </a>
                 </li>

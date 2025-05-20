@@ -38,8 +38,13 @@ export class ProjectCardComponent implements OnInit {
         this.route.paramMap.subscribe(params => {
             const filter = params.get('filter');
             this.selected = filter ?? 'all';
-            this.loadAllProjects();
+            this.updateDisplayedProjects();
         });
+        this.loadAllProjects();
+        const navigation = this.router.getCurrentNavigation();
+        if (navigation?.extras?.state?.['fromNavbar']) {
+            this.navigateToPage(this.route.snapshot.paramMap.get('filter') || 'all');
+        }
     }
 
     loadAllProjects(): void {
@@ -50,13 +55,12 @@ export class ProjectCardComponent implements OnInit {
             JsonFiles.Sites,
         ];
 
-        forkJoin(
-            paths.map(file => this.contentService.getJson<any[]>(file))
-        ).subscribe((dataArrays) => {
-            this.projetos = dataArrays.flat();
-            this.totalPages = Math.ceil(this.projetos.length / this.itemsPerPage);
-            this.updateDisplayedProjects();
-        });
+        forkJoin(paths.map(file => this.contentService.getJson<any[]>(file)))
+            .subscribe((dataArrays) => {
+                this.projetos = dataArrays.flat();
+                this.totalPages = Math.ceil(this.projetos.length / this.itemsPerPage);
+                this.updateDisplayedProjects();
+            });
     }
 
     onOpen(): void {

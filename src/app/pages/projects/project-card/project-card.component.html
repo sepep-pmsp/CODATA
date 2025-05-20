@@ -1,7 +1,11 @@
 <div class="projects-all">
     <div class="forms-projects">
-        <app-project-filter [formSelection]="form_selection" [selected]="selected" (onChange)="navigateToPage($event)"
-            (onOpen)="onOpen()" (onClose)="onClose()"></app-project-filter>
+        <app-project-filter 
+        [formSelection]="form_selection" 
+        [selected]="selected" 
+        (onChange)="navigateToPage($event)"
+        (onOpen)="onOpen()" 
+        (onClose)="onClose()"></app-project-filter>
     </div>
 
     <div 

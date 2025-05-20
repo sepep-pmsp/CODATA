@@ -19,7 +19,7 @@ import { SearchMobileComponent } from './components/search-mobile/search-mobile.
     BrowserModule,
     RouterModule,
     HttpClientModule,
-  ],
+],
   exports: [
     SearchInputComponent,
     MenuListComponent,
