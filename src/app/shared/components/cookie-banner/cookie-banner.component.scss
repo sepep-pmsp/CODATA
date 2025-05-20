@@ -19,22 +19,22 @@
         margin: 0 auto;
         text-align: start;
 
-        h4 {
+        .title-cookies {
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
-        p {
+        .paragraph-cookies {
             margin-bottom: 0.25rem;
         }
 
-        a {
+        .a-link {
             color: var(--color-blue-900);
             text-decoration: underline;
         }
     }
 
-    button {
+    .btn-cookies {
         align-self: center;
         background-color: var( --color-stone-950);
         color: var(--color-white);

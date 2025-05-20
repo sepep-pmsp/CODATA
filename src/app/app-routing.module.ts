@@ -9,7 +9,7 @@ import { AtividadePopupComponent } from './pages/home/sections/atividade-popup/a
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'pop-up/:slug', component: AtividadePopupComponent },
   { path: 'equipe', component: TeamComponent },
   { path: 'atribuicoes', component: AtividadeComponent },
