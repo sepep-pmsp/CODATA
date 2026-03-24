@@ -15,15 +15,19 @@ class AuthState(rx.State):
         self.password = value
 
     def login(self):
-        if authenticate(self.username, self.password):
+        is_valid = authenticate(self.username, self.password)
+        self.password = ""
+
+        if is_valid:
             self.current_user = self.username
             self.error_message = ""
             return rx.redirect("/dashboard")
-        else:
-            self.error_message = "Usuário ou senha inválidos"
+
+        self.error_message = "Usuário ou senha inválidos"
 
     def logout(self):
         self.current_user = None
+        self.password = ""
         return rx.redirect("/")
 
     def check_auth(self):
