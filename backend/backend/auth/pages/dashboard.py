@@ -4,6 +4,6 @@ from backend.auth.state.auth_state import AuthState
 
 def dashboard_page():
     return rx.vstack(
-        rx.heading(f"Bem-vindo {AuthState.current_user}"),
+        rx.heading(f"Bem-vindo {AuthState.current_user}, vá trabalhar e desenvolver logo essa pagina"),
         rx.button("Logout", on_click=AuthState.logout),
     )
