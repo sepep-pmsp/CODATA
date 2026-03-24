@@ -1,0 +1,11 @@
+ROLE_VISITANTE   = "visitante"
+ROLE_OPERADOR    = "operador"
+ROLE_ADMIN_GERAL = "admin_geral"
+ROLE_SUPER_ADMIN = "super_admin"
+
+ALLOWED_ROLES = {
+    ROLE_VISITANTE,
+    ROLE_OPERADOR,
+    ROLE_ADMIN_GERAL,
+    ROLE_SUPER_ADMIN,
+}
